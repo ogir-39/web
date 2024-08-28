@@ -44,7 +44,6 @@ body{
 
 /* SUBMENU */
 .subMenuP{
-    display: none;
     background-color: white;
     position: fixed;
     list-style-type: none;
