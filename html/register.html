@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../images/G_career.png" rel="shortcut icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="../javascript/jquery-3.7.1.min.js"></script>
+    <script src="../javascript/register.js" defer></script>
+    <title>Gcareer - Đăng ký tài khoản</title>
+</head>
+
+<body>
+    <!-- check mk 
+        kiểm tra input 
+    -->
+
+    <header>
+        <a href="../index.html"> <img src="../images/cat.png" width="12%" alt="logo-gcareer"></a>
+    </header>
+    <div class="form-container">
+        <h2 >Đăng ký</h2>
+        
+        <div class="forms flex">
+            <div class="benTrai">
+                <div class="img-container">
+                    <img src="../images/Job_search_1.png" alt="chill" id="img-slide" class="img-slide">
+                    <div id="thanhNgang1" class="thangNgang"></div>
+                    <div id="thanhNgang2" class="thangNgang"></div>
+                    <div id="thanhNgang3" class="thangNgang"></div>
+                    <div id="thanhNgang4" class="thangNgang"></div>
+                    <div id="thanhNgang5" class="thangNgang"></div>
+                    <img src="../images/Job_search_4.png" alt="chill" id="img1-slide" class="img-slide">
+
+
+                </div>
+
+                <div>Bạn đã có tài khoản?</div>
+                <a href="./login.html">Đăng nhập</a>
+            </div>
+            <div class="benPhai right">
+                <form id="forms">
+                    <div id="wrong" class="hidden">Nhập sai</div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="name" name="name" required autocomplete="off">
+                        <label id="ho" class="chu">Họ và tên</label>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <input type="number" id="phone" name="phone" oninput="limitInput(this, 10)" required autocomplete="off">
+                        <label id="soDienThoai" class="chu">Số điện thoại</label>
+                    </div>
+
+                    <div class="form-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" name="email" required autocomplete="off">
+                        <label id="mail" class="chu">Email</label>
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="password" id="password" name="password" required>
+                        <label id="matKhau" class="chu">Mật khẩu</label>
+                        <span><i class="fa-solid fa-eye conMat" id="eyes"></i></span>
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="password" id="password1" name="password1" required>
+                        <label id="matKhau1" class="chu">Nhập lại mật khẩu</label>
+                        <span><i class="fa-solid fa-eye conMat" id="eyes1"></i></span>
+                    </div>
+
+                    <input type="submit" value="Đăng ký" class="btn" id="dangKy"  onclick="checkPassword()" >
+                </form>
+            </div>
+        </div>
+    </div>
+    <img src="../images/business_man.png" class="img_businessMan" id="boy" alt="business-man">
+    <img src="../images/cool_boy.webp" class="img_businessMan" id="coolBoy" alt="business-cool">
+    <div class="chatbox" id="chatBoxWelcome">
+        <p>Chào mừng bạn đến với <span style="font-weight: bolder;">Gcareer</span></p>
+    </div>
+    <div class="chatbox" id="chatBoxUT">
+        <p>Uy tín hàng đầu Việt Nam</p>
+    </div>
+   
+</body>
+
+</html>

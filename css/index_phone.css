@@ -1,0 +1,119 @@
+.flex{
+    display: flex;
+}
+
+/* PHONE MENU */
+.phone{
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1% 2.5%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+}
+
+.menuPhone{
+    align-self: center;
+    font-size: x-large;
+    color: gray;
+}
+
+.logo{
+    width: 30%;
+    align-content: center;
+}
+
+.logo>img{
+    width: 100%;
+}
+
+.userP{
+    font-size: x-large;
+    color: gray;
+}
+
+
+/* SUBMENU */
+.subMenuP{
+    display: none;
+    background-color: white;
+    position: fixed;
+    list-style-type: none;
+    padding: 4%;
+    padding-top: 2%;
+    box-sizing: border-box;
+    margin: 0;
+    top:0;
+    width: 70%;
+    height: 100%;
+    left: 0;
+}
+
+.subMenuP>li{
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.subMenuP>li>i{
+    text-align: center;
+    width: 5%;
+    padding-right: 4%;
+    color: #5cade3;
+}
+
+.subMenuP>li:first-child{
+    padding-bottom: 0;
+}
+
+.subMenuP>li:first-child>i{
+    font-size: x-large;
+}
+
+.subMenuP>li:nth-child(2){
+    text-align: center;
+}
+
+.subMenuP>li:nth-child(2)>img{
+    width: 50%;
+}
+
+.subMenuP>li:nth-child(3){
+    border: 1px solid gray;
+    border-radius: 2rem;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    max-height: 40px;
+    padding: 2%;
+}
+
+.subMenuP>li:nth-child(4){
+    margin-top: 10%;
+}
+
+.subMenuP>li>input{
+    border-radius: 2rem;
+    border: 0;
+    padding: 0.2rem;
+    font-size: medium;
+    box-sizing: border-box;
+    padding-left: 5%;
+    outline: none;
+}
+
+.subMenuP>li>button{
+    border: 0;
+    background-color: transparent;
+}
+
+/* BIGBACKGROUND */
+.bigbackground{
+    width: 100%;
+}
+
+.bigbackground>img{
+    width: 100%;
+}
