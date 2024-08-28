@@ -2,15 +2,23 @@
     display: flex;
 }
 
+html{
+    width: 100vw;
+}
+
+body{
+    width: 100vw;
+}
+
 /* PHONE MENU */
 .phone{
     width: 100%;
     justify-content: space-between;
-    box-sizing: border-box;
-    padding: 1% 2.5%;
     background-color: white;
     position: fixed;
     top: 0;
+    box-sizing: border-box;
+    padding: 1% 2.5%;
 }
 
 .menuPhone{
@@ -111,7 +119,8 @@
 
 /* BIGBACKGROUND */
 .bigbackground{
-    width: 100%;
+    width: 100vw;
+    padding: 0;
 }
 
 .bigbackground>img{
