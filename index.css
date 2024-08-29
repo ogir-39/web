@@ -13,6 +13,10 @@ body {
     
 }
 
+.ads_p , .gcareer , .lists>h2, .topjobs_p{
+    display: none;
+}
+
 /* NONE */
 .phone , .topsjobs_p{
     display: none;
@@ -385,6 +389,12 @@ header{
     margin: 0;
     font-size: 1.1rem;
 }
+
+.imgjob + div{
+    min-height: 60px;
+    display: flex; 
+    align-items: center;
+}
 /* LISTs CSS */
 .lists{
     background-color: whitesmoke;
@@ -721,30 +731,6 @@ header{
 }
 .wallpaper>img{
     width: 100%;
-
-}
-.slogan{
-    top: 20%;
-    width: 100%;
-    margin: 0;
-    position: absolute;
-    z-index: 100;
-}
-.slogan p{
-    font-size: 2rem;
-    color: black;
-    font-weight: bold;
-    margin-left: 3%;
-}
-.slogan>div>p{
-    margin-bottom: 0;
-    font-size: 2rem;
-    color: black;
-}
-.slogan>div>p:nth-child(2){
-    margin-left: 1.6rem;
-    font-size: 4rem;
-    margin-top: 1%;
 }
 
 /* THEME */
