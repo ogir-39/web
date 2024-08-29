@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.hidden{
+    display: none;
+}
+
 html{
     width: 100vw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -10,7 +14,7 @@ html{
 
 body{
     width: 100vw;
-    background-color: white;
+    background-color:white ;
     margin: 0;
 }
 
@@ -22,27 +26,7 @@ body{
     display: none;
 }
 
-.list{
-    display: none;
-}
-
-.go , .icon{
-    display: none;
-}
-
 .career_details{
-    display: none;
-}
-
-.wallpaper{
-    display: none;
-}
-
-.topcmps{
-    display: none;
-}
-
-.theme{
     display: none;
 }
 
@@ -50,8 +34,14 @@ body{
     display: none;
 }
 
-.footer , .bigbackground>h2{
+.bigbackground>h2{
     display: none;
+}
+
+/* BLOCK */
+.lists>h2
+{
+    display: block;
 }
 
 /* PHONE MENU */
@@ -80,7 +70,7 @@ body{
     width: 100%;
 }
 
-.userP{
+.user{
     font-size: x-large;
     color: gray;
     align-self: center;
@@ -113,6 +103,19 @@ body{
     width: 5%;
     padding-right: 4%;
     color: #5cade3;
+}
+
+.subMenuP>li:nth-child(8){
+    border-top: 1px solid gray;
+    margin-top: 5%;
+    padding-top: 5%;
+}
+
+.subMenuP>li>a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding-left: 2%;
 }
 
 .subMenuP>li:first-child{
@@ -171,6 +174,7 @@ body{
     background: url("../images/looking-for-fh-1920x1080_1.jpg");
     box-sizing: border-box;
     margin: 0;
+    display: flex;
 }
 
 .mainsearch{
@@ -180,7 +184,6 @@ body{
     border-radius: 2rem;
     box-sizing: border-box;
     padding: 2% 1%;
-    top:30%;
     justify-content: space-between;
     margin: auto;
     align-content: center;
@@ -233,17 +236,20 @@ body{
 /* TOP JOBS */
 .lists>h2{
     padding: 0 3%;
-    margin-bottom: 0;
+    margin-bottom: 3%;
+    display: flex;
 }
 
 .lists{
     background-color: white;
     width: 100vw;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 .topjobs_p{
     overflow-x:scroll;
-    width: 100vw;
+    width: 100%;
     scrollbar-width: none;
     z-index: 1;
     position: relative;
@@ -251,7 +257,6 @@ body{
     box-sizing: border-box;
     padding: 2%;
 }
-
 
 .topjobs_p .topjob{
     /* display: block; */
@@ -288,8 +293,298 @@ body{
     font-size: 1rem;
 }
 
-/* .topjob h4{
+.imgjob + div{
+    height: 60px;
+    display: flex; 
+    align-items: center;
+    min-height: 0;
+    justify-content: center;
+}
+
+.topjobs_p h4{
     padding: 0.5rem;
     margin: 0;
     font-size: 1.1rem;
-} */
+    text-align: center;
+}
+
+/* CAREER */
+.list{
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.career{
+    width: 95%;
+    padding: 6px;
+    max-height: 20%;
+    box-sizing: border-box;
+    position: relative;
+    /* margin: 0.5rem 0; */
+}
+
+/* GO */
+.go .underline{
+    width: 100%;
+    height: 1px;
+    background: black;
+    margin: 0;
+    transform: scaleX(1);
+}
+
+
+/* WALLPAPER */
+.wallpaper{
+    margin: auto;
+    width: 100%;
+    position: relative;
+    margin-top: 3%;
+}
+.wallpaper>img{
+    width: 100%;
+}
+
+/* TOPCMPS */
+.topcmps{
+    width: 100%;
+    scrollbar-width: none;
+    z-index: 1;
+    position: relative;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.topcmps>h2{
+    padding-top: 0 !important;
+}
+
+.topcmps>div{
+    width: 100%;
+    height: max-content;
+    overflow-x:scroll;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+}
+
+.topcmp{
+    display: block;
+    min-width: 70%;
+    box-sizing: border-box;
+    padding: 2%;
+    justify-self: center;
+}
+
+.topcmp>div{
+    background-color:white;
+    border: 2px solid #b7c8da;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    align-content: center;
+}
+
+.topcmp>div:hover{
+    border-color: lightskyblue;
+}
+
+.topcmp:hover{
+    background: radial-gradient(rgba(135, 206, 250, 0.4),whitesmoke)
+}
+
+.imgcmp{
+    height: 10rem;
+    border-radius: 1rem;
+    align-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+.topcmp h4{
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0.4rem;
+}
+
+.imgcmp>img{
+    width: 50%;
+    border-radius: 1rem;
+}
+
+/* ICON */
+.icon{
+    position: fixed;
+    bottom: 1rem;
+    right: 1.5%;
+    z-index: 2;
+}
+.icon div i{
+    font-size: 2.5rem;
+    color: lightskyblue;
+    margin-top: 0.5rem;
+}
+
+.icon div:last-child a
+{
+    display: none;
+}
+
+.icon div{
+    text-align: right;
+}
+.uy{
+    border: 1px solid lightskyblue;
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    color: lightskyblue;
+    margin: 0;
+    align-self: self-end;
+    display: none;
+}
+
+/* FOOTER */
+footer{
+    background: white;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 3%;
+}
+
+.ads_p{
+    display: block;
+}
+
+.ads_p>img{
+    width: 100%;
+}
+
+.gcareer{
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+.gcareer>img{
+    width: 50%;
+}
+
+footer>div{
+    border-bottom: 0;
+}
+
+footer>div:last-child{
+    border: 0;
+}
+
+footer>div:nth-child(2)>img{
+    width: 10%;
+}
+
+.partner{
+    text-align: center;
+}
+
+.partner>h2{
+    margin-bottom: 0;
+}
+
+.partner img{
+    width: 15%;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.roles{
+    padding: 2%;
+    width: 70%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.contact{
+    width: 100%;
+    display: block;
+}
+
+.contact a{
+    text-decoration: none;
+    color:lightskyblue;
+    font-weight: bold;
+}
+
+.contact>div{
+    border-top: 2px solid gainsboro;
+    flex:1;
+}
+
+.contact>div>p{
+    font-size: 1rem;
+}
+
+.contact>div:last-child>div>a{
+    align-self: center;
+    width: 10%;
+    height: 100%;
+}
+
+.contact>div:last-child>div{
+    justify-content: space-center;
+    gap: 4%;
+    padding-bottom: 5%;
+}
+
+.contact>div>h2{
+    text-align: center;
+}
+
+.contact>div:last-child img{
+    width: 80%;
+}
+
+/*THÊMW*/
+.theme{
+    display: block;
+}
+
+.theme{
+    position: fixed;
+    bottom: 1.7%;
+    width: 10%;
+    text-align: center;
+    align-items: center;
+    z-index: 100;
+    left: 3%;
+}
+
+.theme>i{
+    padding: 0.4rem;
+    width: 1.5rem;
+    height: fit-content;
+    margin: 0.2rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.theme>::before{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.theme>i:first-child{
+    color: gold;
+    margin-left: 0;
+    border: 3px solid gold;
+}
+
+.theme>i:last-child{
+    color: gainsboro;
+}
