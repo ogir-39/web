@@ -1,0 +1,531 @@
+.flex {
+    display: flex;
+}
+
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+}
+
+/*BLOCK*/
+.preview>p{
+    display: block;
+}
+
+/* HIDDEN */
+.head , .below, .ads, #close, .color>p{
+    display: none;
+}
+
+/* PHONE MENU */
+.phone{
+    width: 100%;
+    justify-content: space-between;
+    background-color: white;
+    top: 0;
+    box-sizing: border-box;
+    padding: 1% 2.5%;
+    position: sticky;
+}
+
+.menuPhone{
+    align-self: center;
+    font-size: x-large;
+    color: gray;
+}
+
+.logo{
+    width: 30%;
+    align-content: center;
+}
+
+.logo>img{
+    width: 100%;
+}
+
+.user{
+    font-size: x-large;
+    color: gray;
+    align-self: center;
+}
+
+
+/* SUBMENU */
+.subMenuP{
+    background-color: white;
+    position: fixed;
+    list-style-type: none;
+    padding: 4%;
+    padding-top: 2%;
+    box-sizing: border-box;
+    margin: 0;
+    top:0;
+    width: 70%;
+    height: 100%;
+    left: 0;
+    z-index: 999;
+}
+
+.subMenuP>li{
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.subMenuP>li>i{
+    text-align: center;
+    width: 5%;
+    padding-right: 4%;
+    color: #5cade3;
+}
+
+.subMenuP>li:nth-child(8){
+    border-top: 1px solid gray;
+    margin-top: 5%;
+    padding-top: 5%;
+}
+
+.subMenuP>li>a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding-left: 2%;
+}
+
+.subMenuP>li:first-child{
+    padding-bottom: 0;
+}
+
+.subMenuP>li:first-child>i{
+    font-size: x-large;
+}
+
+.subMenuP>li:nth-child(2){
+    text-align: center;
+}
+
+.subMenuP>li:nth-child(2)>img{
+    width: 50%;
+}
+
+.subMenuP>li:nth-child(3){
+    border: 1px solid gray;
+    border-radius: 2rem;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    max-height: 40px;
+    padding: 2%;
+}
+
+.subMenuP>li:nth-child(4){
+    margin-top: 10%;
+}
+
+.subMenuP>li>input{
+    border-radius: 2rem;
+    border: 0;
+    padding: 0.2rem;
+    font-size: medium;
+    box-sizing: border-box;
+    padding-left: 5%;
+    outline: none;
+    width: 80%;
+    background-color: transparent;
+}
+
+.subMenuP>li>button{
+    border: 0;
+    background-color: transparent;
+}
+
+/* CV */
+.main{
+    width: 100vw;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.CVs{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.cv{
+    width: 80%;
+    box-sizing: border-box;
+    padding: 2% 0;
+}
+
+.cv a{
+    text-decoration: none;
+    color: black;
+}
+
+.cv>div{
+    width: 100%;
+    border: 1px solid #97bdd4;
+    background-color: white;
+    border-radius: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.cv .imgCV{
+    width: 100%;
+    background-color: #cbdde8;
+    border-radius: 1rem 1rem 0 0;
+    box-sizing: border-box;
+    padding: 0.8rem;
+    position: relative;
+    margin: auto;
+}
+
+.cv .imgCV>a>img{
+    width: 100%;
+}
+
+.cv>div>a>p{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* NOTE */
+.imgCV{
+    overflow: hidden;
+}
+
+.tag{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(8, 127, 201, 0.5);
+    border-radius: 1rem 0 1rem 0;
+}
+
+.tag>p{
+    margin: 0;
+    padding: 0.5rem;
+    color: white;
+}
+
+/* CHOICE */
+.choice{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(transparent,rgba(0,0,0,0.5),rgba(0, 0, 0,0.7));
+    padding-bottom: 0;
+    box-sizing: border-box;
+    top:75%;
+}
+
+.imgCV:hover .choice{
+    animation: none;
+    top:75%;
+}
+
+.choice button{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    font-size: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.choice>button{
+    background-color: lightgreen;
+    border: 2px solid rgb(81, 147, 81);
+}
+
+.choice>a:last-child>p{
+    background-color: lightcoral;
+    border: 2px solid rgb(167, 88, 88);
+}
+
+/* bigImg */
+.preview{
+    position: fixed;
+    top:0;
+    margin: auto;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    /* display: none; */
+}
+
+.preview>p{
+    position: fixed;
+    font-size: 2rem;
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    top:1%;
+    right: 2%;
+    margin: 0;
+}
+
+.form{
+    width: 90%;
+    border-radius: 1rem;
+    margin: auto;
+    margin-top: 14%;
+    z-index: 1000;
+    height: 100%;
+    background-color: transparent;
+    display: block;
+}
+
+.bigImg{
+    width: 100%;
+    height: 74%;
+    overflow: visible;
+    border-radius: 1rem 1rem 0 0;
+    background-color: white;
+}
+
+.bigImg>img{
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.design{
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    margin-top: 0;
+    background-color: whitesmoke;
+    height: fit-content;
+    margin: auto;
+    border-radius: 0 0 1rem 1rem;
+    display: flex !important;
+    box-sizing: border-box;
+    padding: 4% 2%;
+}
+
+.color{
+    border: 2px solid #97bdd4;
+    width: 40%;
+    margin: auto;
+    padding: 2%;
+    border-radius: 2rem;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.color>p{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 0.8rem;
+}
+
+.color>button{
+    height: 1.5rem;
+    position: relative;
+    width: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.buttons{
+    width: 50%;
+    display: flex !important;
+}
+
+.btnColor>i{
+    font-size: 1rem;
+    position: absolute;
+    bottom: 10%;
+    right: 17%;
+    display: none;
+}
+
+.buttons button{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1.1rem;
+    color: gray;
+}
+
+.buttons>div{
+    width: 63%;
+    padding: 5%;
+    border-radius: 2rem;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    align-self: center;
+}
+
+.buttons>div:first-child{
+    background-color: #00b14f;
+}
+
+.buttons>div:first-child a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.buttons>div:last-child{
+    border: 1px solid gray;
+}
+
+footer{
+    background: white;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 3%;
+}
+
+.ads_p{
+    display: block;
+}
+
+.ads_p>img{
+    width: 100%;
+}
+
+.gcareer{
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+.gcareer>img{
+    width: 50%;
+}
+
+footer>div{
+    border-bottom: 0;
+}
+
+footer>div:last-child{
+    border: 0;
+}
+
+footer>div:nth-child(2)>img{
+    width: 10%;
+}
+
+.partner{
+    text-align: center;
+}
+
+.partner>h2{
+    margin-bottom: 0;
+}
+
+.partner img{
+    width: 15%;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.roles{
+    padding: 2%;
+    width: 70%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.contact{
+    width: 100%;
+    display: block;
+}
+
+.contact a{
+    text-decoration: none;
+    color:lightskyblue;
+    font-weight: bold;
+}
+
+.contact>div{
+    border-top: 2px solid gainsboro;
+    flex:1;
+}
+
+.contact>div>p{
+    font-size: 1rem;
+}
+
+.contact>div:last-child>div>a{
+    align-self: center;
+    width: 10%;
+    height: 100%;
+}
+
+.contact>div:last-child>div{
+    justify-content: space-center;
+    gap: 4%;
+    padding-bottom: 5%;
+}
+
+.contact>div>h2{
+    text-align: center;
+}
+
+.contact>div:last-child img{
+    width: 80%;
+}
+
+/*THÊMW*/
+.theme{
+    display: block;
+}
+
+.theme{
+    position: fixed;
+    bottom: 1.7%;
+    width: 10%;
+    text-align: center;
+    align-items: center;
+    z-index: 100;
+    left: 3%;
+}
+
+.theme>i{
+    padding: 0.4rem;
+    width: 1.5rem;
+    height: fit-content;
+    margin: 0.2rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.theme>::before{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.theme>i:first-child{
+    color: gold;
+    margin-left: 0;
+    border: 3px solid gold;
+}
+
+.theme>i:last-child{
+    color: gainsboro;
+}
