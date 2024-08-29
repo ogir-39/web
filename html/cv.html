@@ -7,10 +7,14 @@
     <link href="../images/G_career.png" rel="shortcut icon"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- CSS -->
     <link href="../css/cv.css" rel="stylesheet"/>
+    <link rel="stylesheet" media="screen and (max-width: 500px)" href="../css/cv_phone.css">
+    <!-- LINK -->
     <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
     <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
     <script> new WOW().init(); </script>
+    <!-- JS -->
     <script src="../javascript/jquery-3.7.1.min.js"></script>
     <script src="../javascript/cv.js"></script>
 </head>
@@ -52,7 +56,32 @@
                 </li>
             </ul>
         </div>
+        <div class="phone flex">
+            <div class="menuPhone">
+                <i class="fa-solid fa-bars"></i> 
+            </div>
+            <div class="logo">
+                <img src="../images/cat.png"/>
+            </div>
+            <div class="user" style="visibility: hidden;">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
     </header>
+    <ul class="subMenuP">
+        <li><i class="fa-solid fa-xmark"></i></li>
+        <li><img src="../images/cat.png"/></li>
+        <li>
+            <input type="text" placeholder="Nhập"/>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </li>
+        <li><i class="fa-regular fa-bell"></i><a href="#" target="_blank">Thông báo</a></li>
+        <li><i class="fa-solid fa-briefcase"></i><a href="../index.html" target="_blank">Công việc</a></li>
+        <li><i class="fa-regular fa-building"></i><a href="../index.html" target="_blank">Doanh nghiệp</a></li>
+        <li><i class="fa-regular fa-newspaper"></i><a href="../html/cv.html" target="_blank">Mẫu hồ sơ</a></li>
+        <li><i class="fa-solid fa-user"></i><a href="../html/login.html">Đăng nhập</a></li>
+        <li><i class="fa-solid fa-user-plus"></i><a href="../html/register.html">Đăng ký</a></li>
+    </ul>
     <section class="bigbackground">
         <p class="disco">Chào mừng đến với Gcareer</p>
     </section>
@@ -377,6 +406,7 @@
         
     </section>
     <div class="preview">
+        <p>&times;</p>>
         <div class="form flex">
             <div class="bigImg">
                 <img src="../images/CV/maucv_1/1.png" id="bigImg"/>
@@ -428,10 +458,17 @@
         <div><a href="#"><i class="fa-regular fa-circle-up"></i></a></div>
     </aside>
     <footer class="footer">
-        <div class="partner">
+        <div class="ads_p">
+            <img src="../images/gamevui_posterngang.gif"/>
+        </div>
+        <div class="partner hidden">
             <h2>LIÊN KẾT WEBSITE</h2>
             <a href="https://ou.edu.vn/" target="_blank"><img src="../images/ou.png" alt="OU"/></a>
             <a href="#" target="_blank"><img src="../images/company/K&T.png"/></a>
+        </div>
+        <div class="gcareer">
+            <img src="../images/cat.png" alt="Gcareer"/>
+            <p>Website giới thiệu việc làm uy tín</p>
         </div>
         <div class="contact flex">
             <div>
