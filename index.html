@@ -17,7 +17,6 @@
     <!-- JAVASCRIPT -->
     <script src="javascript/jquery-3.7.1.min.js"></script>
     <script src="javascript/index.js"></script>
-    <script src="javascript/index_phone.js"></script>
 </head>
 
 <body>
@@ -64,13 +63,13 @@
             <div class="logo">
                 <img src="images/cat.png"/>
             </div>
-            <div class="userP">
+            <div class="user" style="visibility: hidden;">
                 <i class="fa-solid fa-user"></i>
             </div>
         </div>
     </header>
     <ul class="subMenuP">
-        <li><i class="fa-solid fa-bars"></i> </li>
+        <li><i class="fa-solid fa-xmark"></i></li>
         <li><img src="images/cat.png"/></li>
         <li>
             <input type="text" placeholder="Nhập"/>
@@ -79,7 +78,9 @@
         <li><i class="fa-regular fa-bell"></i> Thông báo</li>
         <li><i class="fa-solid fa-briefcase"></i> Công việc</li>
         <li><i class="fa-regular fa-building"></i> Doanh nghiệp</li>
-        <li><i class="fa-regular fa-newspaper"></i> Mẫu hồ sơ</li>
+        <li><i class="fa-regular fa-newspaper"></i><a href="html/cv.html" target="_blank">Mẫu hồ sơ</a></li>
+        <li><i class="fa-solid fa-user"></i><a href="html/login.html">Đăng nhập</a></li>
+        <li><i class="fa-solid fa-user-plus"></i><a href="html/register.html">Đăng ký</a></li>
     </ul>
     <section class="bigbackground">
         <p></p>
@@ -161,39 +162,59 @@
         </div>
     </section>
     <section class="lists" id="lists">
+        <h2 class="flex">
+            <div class="words">
+                TOP
+                <span class="word">TOP</span>
+            </div>
+            <div class="words">
+                NGÀNH
+                <span class="word">NGÀNH</span>
+            </div>
+    
+            <div class="words">
+                NGHỀ
+                <span class="word">NGHỀ</span>
+            </div>
+            
+            <div class="words">
+                HOT
+                <span class="word">HOT</span>
+            </div>
+        </h2>
         <div class="topjobs_p flex">
             <div class="topjob wow animate__zoomIn">
                 <div>
                     <p class="imgjob"><img src="images/kinhdoanh.png" alt="Kinh doanh / Bán hàng"/></p>
-                    <h4>Kinh doanh / Bán hàng</h4>
+                    <div><h4>Kinh doanh / Bán hàng</h4></div>
                     <p>15.016 việc làm</p>
                 </div>
             </div>
             <div class="topjob wow animate__zoomIn">
                 <div>
                     <p class="imgjob"><img src="images/marketing.png" alt="Marketting / Truyền thông"/></p>
-                    <h4>Marketing / Truyền thông</h4>
+                    <div><h4>Marketing / Truyền thông</h4></div>
                     <p>7.317 việc làm</p>
                 </div>
             </div>
             <div class="topjob wow animate__zoomIn">
                 <div>
                     <p class="imgjob"><img src="images/tuvan.png" alt="Tư vấn"/></p>
-                    <h4>Tư vấn</h4>
+                    <div><h4>Tư vấn</h4></div>
                     <p>4.434 việc làm</p>
                 </div>
             </div>
             <div class="topjob wow animate__zoomIn">
                 <div>
                     <p class="imgjob"><img src="images/Office-Admin-Icon.png"alt="Hành chính / Văn phòng"/></p>
-                    <h4>Hành chính / Văn phòng</h4>
+                    <div><h4>Hành chính / Văn phòng</h4></div>
                     <p>4.290 việc làm</p>
                 </div>
             </div>
             <div class="topjob wow animate__zoomIn">
                 <div>
                     <p class="imgjob"><img src="images/it.png" alt="IT / Phần mềm"/></p>
-                    <h4>IT / Phần mềm</h4>
+                    <div><h4>IT / Phần mềm</h4></div>
                     <p>3.770 việc làm</p>
                 </div>
             </div>
@@ -1418,10 +1439,17 @@
         <div><a href="#"><i class="fa-regular fa-circle-up"></i></a></div>
     </aside>
     <footer class="footer">
-        <div class="partner">
+        <div class="ads_p">
+            <img src="images/gamevui_posterngang.gif"/>
+        </div>
+        <div class="partner hidden">
             <h2>LIÊN KẾT WEBSITE</h2>
             <a href="https://ou.edu.vn/" target="_blank"><img src="images/ou.png" alt="OU"/></a>
             <a href="#" target="_blank"><img src="images/company/K&T.png"/></a>
+        </div>
+        <div class="gcareer">
+            <img src="images/cat.png" alt="Gcareer"/>
+            <p>Website giới thiệu việc làm uy tín</p>
         </div>
         <div class="contact flex">
             <div>
