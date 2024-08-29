@@ -12,6 +12,14 @@ body {
     margin: 0;
     
 }
+/*HIDDEN*/
+.phone, .preview>p{
+    display: none;
+}
+
+/*BLOCK*/
+
+
 /* NAV CSS */
 .hidden
 {
