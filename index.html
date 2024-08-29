@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- CSS -->
-    <link href="index.css" rel="stylesheet" media="screen and (min-width: 1024px)"/>
+    <link href="index.css" rel="stylesheet"/>
     <link rel="stylesheet" media="screen and (max-width: 500px)" href="css/index_phone.css">
     <!-- CDN -->
     <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
@@ -16,24 +16,48 @@
     <script> new WOW().init(); </script>
     <!-- JAVASCRIPT -->
     <script src="javascript/jquery-3.7.1.min.js"></script>
+    <script src="javascript/index.js"></script>
     <script src="javascript/index_phone.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="phone flex">
-            <ul class="subMenuP">
-                <li><i class="fa-solid fa-bars"></i> </li>
-                <li><img src="images/cat.png"/></li>
-                <li class="search flex">
-                    <input type="text" placeholder="Nhập" id="taskbarSearch"/>
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </li>
-                <li><i class="fa-regular fa-bell"></i> Thông báo</li>
-                <li><i class="fa-solid fa-briefcase"></i> Công việc</li>
-                <li><i class="fa-regular fa-building"></i> Doanh nghiệp</li>
-                <li><i class="fa-regular fa-newspaper"></i> Mẫu hồ sơ</li>
+        <div class="head flex">
+            <ul class="menu flex">
+                <li><a href="index.html"><img src="images/cat.png" alt="LOGO"/></a></li>
+                <li><a href="#lists">Công việc</a></li>
+                <li><a href="#topcmps">Doanh nghiệp</a></li>
+                <li><a href="html/cv.html" target="_blank">Mẫu hồ sơ</a></li>
             </ul>
+            <div class="flex searchTaskbar">
+                <i class="fa-solid fa-xmark hidden" id="click" title="Đóng thanh tìm kiếm"></i>
+                <div class="search flex unexpand">
+                    <input id="taskbarSearch" type="text" placeholder="Nhập công việc/doanh nghiệp"/>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Tìm</button>
+                </div>
+            </div>
+            <ul class="users flex">
+                <li class="searchIcon">
+                    <i class="fa-solid fa-magnifying-glass click" id="click1" title="Mở thanh tìm kiếm"></i>
+                </li>
+                <li class="noti">
+                    
+                    <i class="fa-solid fa-bell"></i>
+                    <ul class="subnoti">
+                        <img src="images/sad_face.png" alt="ảnh"/>
+                        <li>Chưa có thông báo nào</li>
+                    </ul>
+                </li>
+                <li class="user">
+                    <i class="fa-solid fa-user"></i>
+                    <ul class="sub">
+                        <li><a href="html/login.html">Đăng nhập</a></li>
+                        <li><a href="html/register.html">Đăng ký</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="phone flex">
             <div class="menuPhone">
                 <i class="fa-solid fa-bars"></i> 
             </div>
@@ -45,7 +69,20 @@
             </div>
         </div>
     </header>
+    <ul class="subMenuP">
+        <li><i class="fa-solid fa-bars"></i> </li>
+        <li><img src="images/cat.png"/></li>
+        <li>
+            <input type="text" placeholder="Nhập"/>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </li>
+        <li><i class="fa-regular fa-bell"></i> Thông báo</li>
+        <li><i class="fa-solid fa-briefcase"></i> Công việc</li>
+        <li><i class="fa-regular fa-building"></i> Doanh nghiệp</li>
+        <li><i class="fa-regular fa-newspaper"></i> Mẫu hồ sơ</li>
+    </ul>
     <section class="bigbackground">
+        <p></p>
         <div class="mainsearch flex">
             <div class="bigsearch">
                 <input id="mainSearch" type="text" placeholder="Nhập công việc/doanh nghiệp"/>
@@ -62,11 +99,9 @@
                 <option value="Hà Tây">Hà Tây</option>
                 <option value="Quảng Ngãi">Quảng Ngãi</option>
             </select></div>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass look"></i> Tìm</button>
             <button type="submit"><i class="fa-solid fa-magnifying-glass look"></i></button>
         </div>
-    </section>
-    
-    <section class="lists">
         <h2 class="flex">
             <div class="words">
                 TOP
@@ -124,10 +159,1288 @@
                 </div>
             </div>
         </div>
-
     </section>
-    <footer>
-    
+    <section class="lists" id="lists">
+        <div class="topjobs_p flex">
+            <div class="topjob wow animate__zoomIn">
+                <div>
+                    <p class="imgjob"><img src="images/kinhdoanh.png" alt="Kinh doanh / Bán hàng"/></p>
+                    <h4>Kinh doanh / Bán hàng</h4>
+                    <p>15.016 việc làm</p>
+                </div>
+            </div>
+            <div class="topjob wow animate__zoomIn">
+                <div>
+                    <p class="imgjob"><img src="images/marketing.png" alt="Marketting / Truyền thông"/></p>
+                    <h4>Marketing / Truyền thông</h4>
+                    <p>7.317 việc làm</p>
+                </div>
+            </div>
+            <div class="topjob wow animate__zoomIn">
+                <div>
+                    <p class="imgjob"><img src="images/tuvan.png" alt="Tư vấn"/></p>
+                    <h4>Tư vấn</h4>
+                    <p>4.434 việc làm</p>
+                </div>
+            </div>
+            <div class="topjob wow animate__zoomIn">
+                <div>
+                    <p class="imgjob"><img src="images/Office-Admin-Icon.png"alt="Hành chính / Văn phòng"/></p>
+                    <h4>Hành chính / Văn phòng</h4>
+                    <p>4.290 việc làm</p>
+                </div>
+            </div>
+            <div class="topjob wow animate__zoomIn">
+                <div>
+                    <p class="imgjob"><img src="images/it.png" alt="IT / Phần mềm"/></p>
+                    <h4>IT / Phần mềm</h4>
+                    <p>3.770 việc làm</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>DANH SÁCH CÁC VIỆC LÀM ĐANG TUYỂN DỤNG</h2>
+            <div class="flex">
+                <i class="fa-solid fa-filter filter" id="filter"></i>
+               <div class="flex filter-menu" >
+                <button type="button" class="btnArea" rel="MB">Miền Bắc</button>
+                <button type="button" class="btnArea" rel="MTr">Miền Trung</button>
+                <button type="button" class="btnArea" rel="MN">Miền Nam</button>
+                
+               </div>
+            </div>
+        </div>
+        <div class="list flex">
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank"><div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Apple-Logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Nhân viên bán hàng / Sales</p>
+                            <p>Cửa hàng điện tử Apple</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+              
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/fpt-logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Giảng viên ngành Công nghệ thông tin</p>
+                            <p>Trường đại học FPT</p>
+                            <div class="flex">
+                                <p class="salary">Thỏa thuận</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/logo-vnpt-3.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Cộng tác viên Quản trị mạng và an toàn thông tin</p>
+                            <p>Công ty Công nghệ thông tin VNPT</p>
+                            <div class="flex">
+                                <p class="salary">15-20 triệu</p>
+                                <p class="location">Hà Nội</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>            
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/logo_1.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Nhân viên chăm sóc / tư vấn khách hàng</p>
+                            <p>Trung tâm thẩm mỹ Queen Beauty</p>
+                            <div class="flex">
+                                <p class="salary">5-12 triệu</p>
+                                <p class="location">Huế</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/chef_food.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Tạp vụ</p>
+                            <p>Nhà hàng Chef Food</p>
+                            <div class="flex">
+                                <p class="salary">5-8 triệu</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Nike-Logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Content Writer (Fb) trang chủ Nike</p>
+                            <p>Công ty Nike</p>
+                            <div class="flex">
+                                <p class="salary">Thỏa thuận</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Pepsi-Logo-1969.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Quản lý nhân sự cho công ty Pepsi</p>
+                            <p>Công ty Pepsi</p>
+                            <div class="flex">
+                                <p class="salary">20-30 triệu</p>
+                                <p class="location">Bình Dương</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Samsung_Logo.svg.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Chuyên viên kỹ thuật</p>
+                            <p>Công ty con chi nhánh 3 - Samsung</p>
+                            <div class="flex">
+                                <p class="salary">15-20 triệu</p>
+                                <p class="location">Hà Nội</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/drink.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Bartender</p>
+                            <p>Quán rượu Cheers</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Khánh Hòa</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/—Pngtree—a beautiful logo of_15918990.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Web designer / Thiết kế web</p>
+                            <p>Công ty TNHH A&A</p>
+                            <div class="flex">
+                                <p class="salary">15-18 triệu</p>
+                                <p class="location">Vũng Tàu</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/—Pngtree—beautiful versus logo_6403335.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Chuyên viên kỹ thuật</p>
+                            <p>Công ty TNHH Visual Code</p>
+                            <div class="flex">
+                                <p class="salary">30 triệu</p>
+                                <p class="location">Bình Định</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/company-logo-transparent-png-19.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Hướng dẫn viên du lịch</p>
+                            <p>Công ty TNHH Travel</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Kiên Giang</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank"><div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Apple-Logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Nhân viên bán hàng / Sales</p>
+                            <p>Cửa hàng điện tử Apple</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+              
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/fpt-logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Giảng viên ngành Công nghệ thông tin</p>
+                            <p>Trường đại học FPT</p>
+                            <div class="flex">
+                                <p class="salary">Thỏa thuận</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/logo-vnpt-3.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Cộng tác viên Quản trị mạng và an toàn thông tin</p>
+                            <p>Công ty Công nghệ thông tin VNPT</p>
+                            <div class="flex">
+                                <p class="salary">15-20 triệu</p>
+                                <p class="location">Hà Nội</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div> 
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/logo_1.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Nhân viên chăm sóc / tư vấn khách hàng</p>
+                            <p>Trung tâm thẩm mỹ Queen Beauty</p>
+                            <div class="flex">
+                                <p class="salary">5-12 triệu</p>
+                                <p class="location">Huế</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/chef_food.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Tạp vụ</p>
+                            <p>Nhà hàng Chef Food</p>
+                            <div class="flex">
+                                <p class="salary">5-8 triệu</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Nike-Logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Content Writer (Fb) trang chủ Nike</p>
+                            <p>Công ty Nike</p>
+                            <div class="flex">
+                                <p class="salary">Thỏa thuận</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Pepsi-Logo-1969.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Quản lý nhân sự cho công ty Pepsi</p>
+                            <p>Công ty Pepsi</p>
+                            <div class="flex">
+                                <p class="salary">20-30 triệu</p>
+                                <p class="location">Bình Dương</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Samsung_Logo.svg.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Chuyên viên kỹ thuật</p>
+                            <p>Công ty con chi nhánh 3 - Samsung</p>
+                            <div class="flex">
+                                <p class="salary">15-20 triệu</p>
+                                <p class="location">Hà Nội</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/drink.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Bartender</p>
+                            <p>Quán rượu Cheers</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Khánh Hòa</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/—Pngtree—a beautiful logo of_15918990.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Web designer / Thiết kế web</p>
+                            <p>Công ty TNHH A&A</p>
+                            <div class="flex">
+                                <p class="salary">15-18 triệu</p>
+                                <p class="location">Vũng Tàu</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/—Pngtree—beautiful versus logo_6403335.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Chuyên viên kỹ thuật</p>
+                            <p>Công ty TNHH Visual Code</p>
+                            <div class="flex">
+                                <p class="salary">30 triệu</p>
+                                <p class="location">Bình Định</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/company-logo-transparent-png-19.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Hướng dẫn viên du lịch</p>
+                            <p>Công ty TNHH Travel</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Kiên Giang</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank"><div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Apple-Logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Nhân viên bán hàng / Sales</p>
+                            <p>Cửa hàng điện tử Apple</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/fpt-logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Giảng viên ngành Công nghệ thông tin</p>
+                            <p>Trường đại học FPT</p>
+                            <div class="flex">
+                                <p class="salary">Thỏa thuận</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/logo-vnpt-3.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Cộng tác viên Quản trị mạng và an toàn thông tin</p>
+                            <p>Công ty Công nghệ thông tin VNPT</p>
+                            <div class="flex">
+                                <p class="salary">15-20 triệu</p>
+                                <p class="location">Hà Nội</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>            
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/logo_1.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Nhân viên chăm sóc / tư vấn khách hàng</p>
+                            <p>Trung tâm thẩm mỹ Queen Beauty</p>
+                            <div class="flex">
+                                <p class="salary">5-12 triệu</p>
+                                <p class="location">Huế</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/chef_food.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Tạp vụ</p>
+                            <p>Nhà hàng Chef Food</p>
+                            <div class="flex">
+                                <p class="salary">5-8 triệu</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Nike-Logo.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Content Writer (Fb) trang chủ Nike</p>
+                            <p>Công ty Nike</p>
+                            <div class="flex">
+                                <p class="salary">Thỏa thuận</p>
+                                <p class="location">Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Pepsi-Logo-1969.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Quản lý nhân sự cho công ty Pepsi</p>
+                            <p>Công ty Pepsi</p>
+                            <div class="flex">
+                                <p class="salary">20-30 triệu</p>
+                                <p class="location">Bình Dương</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/Samsung_Logo.svg.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Chuyên viên kỹ thuật</p>
+                            <p>Công ty con chi nhánh 3 - Samsung</p>
+                            <div class="flex">
+                                <p class="salary">15-20 triệu</p>
+                                <p class="location">Hà Nội</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/drink.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Bartender</p>
+                            <p>Quán rượu Cheers</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Khánh Hòa</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/—Pngtree—a beautiful logo of_15918990.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Web designer / Thiết kế web</p>
+                            <p>Công ty TNHH A&A</p>
+                            <div class="flex">
+                                <p class="salary">15-18 triệu</p>
+                                <p class="location">Vũng Tàu</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/—Pngtree—beautiful versus logo_6403335.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Chuyên viên kỹ thuật</p>
+                            <p>Công ty TNHH Visual Code</p>
+                            <div class="flex">
+                                <p class="salary">30 triệu</p>
+                                <p class="location">Bình Định</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="career">
+                <a href="html/detail_career.html" target="_blank">
+                    <div class="flex">
+                        <div class="imgcareer">
+                            <img src="images/company/company-logo-transparent-png-19.png" alt="ảnh"/>
+                        </div>
+                        <div class="detail">
+                            <p class="name">Hướng dẫn viên du lịch</p>
+                            <p>Công ty TNHH Travel</p>
+                            <div class="flex">
+                                <p class="salary">10-15 triệu</p>
+                                <p class="location">Kiên Giang</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="go flex" id="btnMoRong">
+            <div>
+                <div>Xem tất cả</div>
+                <p class="underline"></p>
+            </div>
+        </div>
+        <div class="career_details" >
+            <div class="career_detail" id="career1">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/Apple-Logo.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Nhân viên bán hàng / Sales</h2>
+                        <p>Cửa hàng điện tử Apple</p>
+                        <div class="flex">
+                            <p class="salary">10-15 triệu</p>
+                            <p class="location">Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tìm kiếm khách hàng tiềm năng qua các mối quan hệ và ứng dụng mạng xã hội (công ty hỗ trợ chi phí).</li>
+                        <li>Giới thiệu và tư vấn sản phẩm và các dịch vụ kèm theo.</li>
+                        <li>Thực hiện tư vấn, đàm phán, ký kết hợp đồng mua bán.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Độ tuổi từ 18 - 29 tuổi.</li>
+                        <li>Chăm chỉ, nhanh nhẹn, hoạt ngôn.</li>
+                        <li>Có tinh thần trách nhiệm trong công việc, cẩn thận, trung thực.</li>
+                        <li>Khả năng làm việc độc lập, chịu được áp lực trong công việc.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh.</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng.</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương.</li>
+                        <li>Môi trường làm việc năng động và hòa hợp.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Hồ Chí Minh: 1/19 Thạch Lam, Phú Thọ Hòa, Tân Phú.</p>
+                </div>
+            </div>
+            <div class="career_detail" id="career2">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/fpt-logo.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Giảng viên ngành Công nghệ thông tin</h2>
+                        <p>Trường đại học FPT</p>
+                        <div class="flex">
+                            <p class="salary">Thỏa thuận</p>
+                            <p class="location">Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Giảng dạy cho sinh viên</li>
+                        <li>Thực hiện nhiệm vụ nghiên cứu khoa học theo quy định của nhà trường.</li>
+                        <li>Tham gia các hoạt động phát triển chuyên môn khác: Xây dựng, chỉnh sửa đề cương học phần, cố vấn học tập, hướng dẫn sinh viên, coi thi, chấm thi, tham gia quảng bá tuyển sinh cho khoa,...</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Bằng cấp: Tốt nghiệp Thạc sĩ trở lên các chuyên ngành Công nghệ thông tin, Khoa học máy tính, Kỹ thuật phần mềm, Hệ thống thông tin, Trí tuệ nhân tạo, Toán ứng dụng hoặc các chuyên ngành tương đương. Ưu tiên người tốt nghiệp ĐH, ThS, TS ở các nước tiên tiến.</li>
+                        <li>Ưu tiên ứng viên có kinh nghiệm giảng dạy đại học các môn trong các nhóm học phần trên.</li>
+                        <li>Có khả năng ứng dụng công nghệ thông tin trong giảng dạy, nghiên cứu</li>
+                        <li>Có khả năng đọc và nghiên cứu tài liệu bằng tiếng Anh. Có khả năng giao tiếp, giảng dạy bằng tiếng Anh là một lợi thế.</li>
+                        <li>Tác phong sư phạm, trung thực, khả năng chịu áp lực công việc cao</li>
+                    </ol>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức thu nhập cạnh tranh (theo năng lực và hiệu quả công việc)</li>
+                        <li>Thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Hồ Chí Minh: xxxxxxx</p>
+                </div>
+            </div>
+            <div class="career_detail" id="career3">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/logo-vnpt-3.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Cộng tác viên Quản trị mạng và an toàn thông tin</h2>
+                        <p>Công ty Công nghệ thông tin VNPT</p>
+                        <div class="flex">
+                            <p class="salary">15-20 triệu</p>
+                            <p class="location">Hà Nội</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Công tác vận hành quản trị mạng và thiết bị bảo mật</li>
+                        <li>Kiểm tra, bảo trì bảo dưỡng</li>
+                        <li>Tham gia các dự án của công ty: Tham gia các công việc đầu tư, triển khai, các dự án.</li>
+                        <li>Các nhiệm vụ khác được phân công</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Sinh viên năm cuối/Tốt nghiệp đại học hệ chính quy các chuyên ngành CNTT, điện tử viễn thông hoặc các chuyên ngành tương đương</li>
+                        <li>Từ 6 tháng kinh nghiệm ở vị trí tương đương</li>
+                        <li>Hiểu các mô hình, kiến trúc kết nối đang cung cấp các khối dịch vụ CNTT.</li>
+                        <li>Có kiến thức chuyên môn và thực tiễn trong công tác vận hành các thiết bị mạng và bảo mật: Cisco, Juniper, F5, Palo altoCheckpoint, Citrix...</li>
+                        <li>Có khả năng phân tích, xây dựng và triển khai các hệ thống cung cấp dịch vụ</li>
+                        <li>Kỹ năng xử lý các sự cố về mạng và bảo mật</li>
+                        <li>Có chứng chỉ quốc tế CCNA, CCNP,.... là một lợi thế.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Nghỉ phép 12 ngày/năm</li>
+                        <li>Khám sức khỏe hàng năm</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Hà Nội: Tòa VNPT - IT số 136 Nguyễn Phong Sắc, P. Dịch Vọng, Cầu Giấy.</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career4">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/logo_1.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Nhân viên chăm sóc / tư vấn khách hàng</h2>
+                        <p>Trung tâm thẩm mỹ Queen Beauty</p>
+                        <div class="flex">
+                            <p class="salary">5-12 triệu</p>
+                            <p class="location">Huế</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Gọi điện tư vấn cho khách hàng về các chương trình dịch vụ thẩm mỹ của Công ty theo danh sách khách hàng có nhu cầu về dịch vụ</li>
+                        <li>Nhập dữ liệu thông tin khách hàng lên hệ thống dữ liệu của Công ty</li>
+                        <li>Tư vấn, giải đáp thắc mắc và thuyết phục khách hàng sử dụng dịch vụ thẩm mỹ qua điện thoại, zalo, sms, email...</li>
+                        <li>Chỉ làm việc tại văn phòng, không đi thị trường</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Độ tuổi: 2001-1997</li>
+                        <li>Giọng nói dễ nghe, có khả năng xử lý tình huống</li>
+                        <li>Kỹ năng chốt sale, xử lý từ chối, thuyết phục khách hàng</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                        <li><b>Bắc buộc có kinh nghiệm từng làm Spa, Thẩm mỹ, phòng khám chuyên khoa. (từ 3 tháng)</b></li>
+                    </ol>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 5-12 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li></li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>xxxxxxxx</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career5">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/chef_food.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Tạp vụ</h2>
+                        <p>Nhà hàng Chef Food</p>
+                        <div class="flex">
+                            <p class="salary">5-8 triệu</p>
+                            <p class="location">Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tiếp đón và phục vụ du khách tham quan.</li>
+                        <li>Cung cấp cho du khách  những thông tin đầy đủ và chi tiết.</li>
+                        <li>Tổ chức các chuyến tham quan theo nhóm và cá nhân có hướng dẫn viên cũng như làm việc với các nhóm trường học.</li>
+                        <li>Đảm bảo rằng tất cả du khách tuân theo các quy định của các địa điểm du lịch.</li>
+                        <li>Hỗ trợ nhóm tổ chức các sự kiện xã hội và kinh doanh nội bộ như các sự kiện đặc biệt và ngày lễ.</li>
+                        <li>Thực hiện các công việc khác theo phân công.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Tốt nghiệp Trung cấp trở lên.</li>
+                        <li>Có ít nhất 01 năm kinh nghiệm trong ngành dịch vụ, yêu cầu đã có chứng chỉ hướng dẫn viên du lịch.</li>
+                        <li>Có thể sử dụng tiếng Anh giao tiếp.</li>
+                        <li>Kỹ năng sử dụng máy tính, word, excel cơ bản.</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                        <li>Cơ hội học hỏi, đào tạo từ các vườn quốc gia trong nước và quốc tế.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Kiên Giang: Công ty du lịch Travel.</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career6">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/Nike-Logo.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Content Writer (Fb) trang chủ Nike</h2>
+                        <p>Công ty Nike</p>
+                        <div class="flex">
+                            <p class="salary">Thỏa thuận</p>
+                            <p class="location">Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tiếp đón và phục vụ du khách tham quan.</li>
+                        <li>Cung cấp cho du khách  những thông tin đầy đủ và chi tiết.</li>
+                        <li>Tổ chức các chuyến tham quan theo nhóm và cá nhân có hướng dẫn viên cũng như làm việc với các nhóm trường học.</li>
+                        <li>Đảm bảo rằng tất cả du khách tuân theo các quy định của các địa điểm du lịch.</li>
+                        <li>Hỗ trợ nhóm tổ chức các sự kiện xã hội và kinh doanh nội bộ như các sự kiện đặc biệt và ngày lễ.</li>
+                        <li>Thực hiện các công việc khác theo phân công.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Tốt nghiệp Trung cấp trở lên.</li>
+                        <li>Có ít nhất 01 năm kinh nghiệm trong ngành dịch vụ, yêu cầu đã có chứng chỉ hướng dẫn viên du lịch.</li>
+                        <li>Có thể sử dụng tiếng Anh giao tiếp.</li>
+                        <li>Kỹ năng sử dụng máy tính, word, excel cơ bản.</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                        <li>Cơ hội học hỏi, đào tạo từ các vườn quốc gia trong nước và quốc tế.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Kiên Giang: Công ty du lịch Travel.</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career7">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/Pepsi-Logo-1969.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Quản lý nhân sự cho công ty Pepsi</h2>
+                        <p>Công ty Pepsi</p>
+                        <div class="flex">
+                            <p class="salary">20-30 triệu</p>
+                            <p class="location">Bình Dương</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tiếp đón và phục vụ du khách tham quan.</li>
+                        <li>Cung cấp cho du khách  những thông tin đầy đủ và chi tiết.</li>
+                        <li>Tổ chức các chuyến tham quan theo nhóm và cá nhân có hướng dẫn viên cũng như làm việc với các nhóm trường học.</li>
+                        <li>Đảm bảo rằng tất cả du khách tuân theo các quy định của các địa điểm du lịch.</li>
+                        <li>Hỗ trợ nhóm tổ chức các sự kiện xã hội và kinh doanh nội bộ như các sự kiện đặc biệt và ngày lễ.</li>
+                        <li>Thực hiện các công việc khác theo phân công.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Tốt nghiệp Trung cấp trở lên.</li>
+                        <li>Có ít nhất 01 năm kinh nghiệm trong ngành dịch vụ, yêu cầu đã có chứng chỉ hướng dẫn viên du lịch.</li>
+                        <li>Có thể sử dụng tiếng Anh giao tiếp.</li>
+                        <li>Kỹ năng sử dụng máy tính, word, excel cơ bản.</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                        <li>Cơ hội học hỏi, đào tạo từ các vườn quốc gia trong nước và quốc tế.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Kiên Giang: Công ty du lịch Travel.</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career8">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/Samsung_Logo.svg.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Chuyên viên kỹ thuật</h2>
+                        <p>Công ty con chi nhánh 3 - Samsung</p>
+                        <div class="flex">
+                            <p class="salary">15-20 triệu</p>
+                            <p class="location">Hà Nội</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tiếp đón và phục vụ du khách tham quan.</li>
+                        <li>Cung cấp cho du khách  những thông tin đầy đủ và chi tiết.</li>
+                        <li>Tổ chức các chuyến tham quan theo nhóm và cá nhân có hướng dẫn viên cũng như làm việc với các nhóm trường học.</li>
+                        <li>Đảm bảo rằng tất cả du khách tuân theo các quy định của các địa điểm du lịch.</li>
+                        <li>Hỗ trợ nhóm tổ chức các sự kiện xã hội và kinh doanh nội bộ như các sự kiện đặc biệt và ngày lễ.</li>
+                        <li>Thực hiện các công việc khác theo phân công.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Tốt nghiệp Trung cấp trở lên.</li>
+                        <li>Có ít nhất 01 năm kinh nghiệm trong ngành dịch vụ, yêu cầu đã có chứng chỉ hướng dẫn viên du lịch.</li>
+                        <li>Có thể sử dụng tiếng Anh giao tiếp.</li>
+                        <li>Kỹ năng sử dụng máy tính, word, excel cơ bản.</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                        <li>Cơ hội học hỏi, đào tạo từ các vườn quốc gia trong nước và quốc tế.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Kiên Giang: Công ty du lịch Travel.</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career9">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/drink.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Bartender</h2>
+                        <p>Quán rượu Cheers</p>
+                        <div class="flex">
+                            <p class="salary">10-15 triệu</p>
+                            <p class="location">Khánh Hòa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tiếp đón và phục vụ du khách tham quan.</li>
+                        <li>Cung cấp cho du khách  những thông tin đầy đủ và chi tiết.</li>
+                        <li>Tổ chức các chuyến tham quan theo nhóm và cá nhân có hướng dẫn viên cũng như làm việc với các nhóm trường học.</li>
+                        <li>Đảm bảo rằng tất cả du khách tuân theo các quy định của các địa điểm du lịch.</li>
+                        <li>Hỗ trợ nhóm tổ chức các sự kiện xã hội và kinh doanh nội bộ như các sự kiện đặc biệt và ngày lễ.</li>
+                        <li>Thực hiện các công việc khác theo phân công.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Tốt nghiệp Trung cấp trở lên.</li>
+                        <li>Có ít nhất 01 năm kinh nghiệm trong ngành dịch vụ, yêu cầu đã có chứng chỉ hướng dẫn viên du lịch.</li>
+                        <li>Có thể sử dụng tiếng Anh giao tiếp.</li>
+                        <li>Kỹ năng sử dụng máy tính, word, excel cơ bản.</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                        <li>Cơ hội học hỏi, đào tạo từ các vườn quốc gia trong nước và quốc tế.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Kiên Giang: Công ty du lịch Travel.</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career10">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/—Pngtree—a beautiful logo of_15918990.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Web designer / Thiết kế web</h2>
+                        <p>Công ty TNHH A&A</p>
+                        <div class="flex">
+                            <p class="salary">15-18 triệu</p>
+                            <p class="location">Vũng Tàu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tiếp đón và phục vụ du khách tham quan.</li>
+                        <li>Cung cấp cho du khách  những thông tin đầy đủ và chi tiết.</li>
+                        <li>Tổ chức các chuyến tham quan theo nhóm và cá nhân có hướng dẫn viên cũng như làm việc với các nhóm trường học.</li>
+                        <li>Đảm bảo rằng tất cả du khách tuân theo các quy định của các địa điểm du lịch.</li>
+                        <li>Hỗ trợ nhóm tổ chức các sự kiện xã hội và kinh doanh nội bộ như các sự kiện đặc biệt và ngày lễ.</li>
+                        <li>Thực hiện các công việc khác theo phân công.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Tốt nghiệp Trung cấp trở lên.</li>
+                        <li>Có ít nhất 01 năm kinh nghiệm trong ngành dịch vụ, yêu cầu đã có chứng chỉ hướng dẫn viên du lịch.</li>
+                        <li>Có thể sử dụng tiếng Anh giao tiếp.</li>
+                        <li>Kỹ năng sử dụng máy tính, word, excel cơ bản.</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                        <li>Cơ hội học hỏi, đào tạo từ các vườn quốc gia trong nước và quốc tế.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Kiên Giang: Công ty du lịch Travel.</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career11">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/—Pngtree—beautiful versus logo_6403335.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Chuyên viên kỹ thuật</h2>
+                        <p>Công ty TNHH Visual Code</p>
+                        <div class="flex">
+                            <p class="salary">30 triệu</p>
+                            <p class="location">Bình Định</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tiếp đón và phục vụ du khách tham quan.</li>
+                        <li>Cung cấp cho du khách  những thông tin đầy đủ và chi tiết.</li>
+                        <li>Tổ chức các chuyến tham quan theo nhóm và cá nhân có hướng dẫn viên cũng như làm việc với các nhóm trường học.</li>
+                        <li>Đảm bảo rằng tất cả du khách tuân theo các quy định của các địa điểm du lịch.</li>
+                        <li>Hỗ trợ nhóm tổ chức các sự kiện xã hội và kinh doanh nội bộ như các sự kiện đặc biệt và ngày lễ.</li>
+                        <li>Thực hiện các công việc khác theo phân công.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Tốt nghiệp Trung cấp trở lên.</li>
+                        <li>Có ít nhất 01 năm kinh nghiệm trong ngành dịch vụ, yêu cầu đã có chứng chỉ hướng dẫn viên du lịch.</li>
+                        <li>Có thể sử dụng tiếng Anh giao tiếp.</li>
+                        <li>Kỹ năng sử dụng máy tính, word, excel cơ bản.</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                        <li>Cơ hội học hỏi, đào tạo từ các vườn quốc gia trong nước và quốc tế.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Kiên Giang: Công ty du lịch Travel.</p>
+                </div>
+            </div>
+            <div class="career_detail"  id="career12">
+                <div class="fi_part flex">
+                    <div class="imgcareer">
+                        <img src="images/company/company-logo-transparent-png-19.png" alt="ảnh"/>
+                    </div>
+                    <div class="in4">
+                        <h2 class="name">Hướng dẫn viên du lịch</h2>
+                        <p>Công ty TNHH Travel</p>
+                        <div class="flex">
+                            <p class="salary">10-15 triệu</p>
+                            <p class="location">Kiên Giang</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="se_part">
+                    <h3>Mô tả công việc</h3>
+                    <ol>
+                        <li>Tiếp đón và phục vụ du khách tham quan.</li>
+                        <li>Cung cấp cho du khách  những thông tin đầy đủ và chi tiết.</li>
+                        <li>Tổ chức các chuyến tham quan theo nhóm và cá nhân có hướng dẫn viên cũng như làm việc với các nhóm trường học.</li>
+                        <li>Đảm bảo rằng tất cả du khách tuân theo các quy định của các địa điểm du lịch.</li>
+                        <li>Hỗ trợ nhóm tổ chức các sự kiện xã hội và kinh doanh nội bộ như các sự kiện đặc biệt và ngày lễ.</li>
+                        <li>Thực hiện các công việc khác theo phân công.</li>
+                    </ol>
+                    <h3>Yêu cầu ứng viên</h3>
+                    <ol>
+                        <li>Tốt nghiệp Trung cấp trở lên.</li>
+                        <li>Có ít nhất 01 năm kinh nghiệm trong ngành dịch vụ, yêu cầu đã có chứng chỉ hướng dẫn viên du lịch.</li>
+                        <li>Có thể sử dụng tiếng Anh giao tiếp.</li>
+                        <li>Kỹ năng sử dụng máy tính, word, excel cơ bản.</li>
+                        <li>Trung thực, thân thiện, cởi mở, giao tiếp tốt.</li>
+                    </ol>
+                    <p><b>Yêu cầu:</b> nộp CV bằng tiếng Anh</p>
+                    <h3>Quyền lợi</h3>
+                    <ul>
+                        <li>Mức lương: 15-20 triệu/tháng</li>
+                        <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                        <li>Chế độ BHYT, BHXH 100% lương</li>
+                        <li>Môi trường làm việc năng động và hòa hợp</li>
+                        <li>Cơ hội học hỏi, đào tạo từ các vườn quốc gia trong nước và quốc tế.</li>
+                    </ul>
+                    <h3>Địa điểm làm việc</h3>
+                    <p>Kiên Giang: Công ty du lịch Travel.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wallpaper">
+            <img src="images/sup_ga.png" alt="Súp gà"/>
+        </div>
+        <div class="topcmps" id="topcmps">
+            <h2>TOP DOANH NGHIỆP HÀNG ĐẦU</h2>
+            <div class="flex">
+                <div class="topcmp wow animate__tada">
+                    <div>
+                        <div class="imgcmp"><img src="images/company/nuti.jpg" alt="Kinh doanh / Bán hàng"/></div>
+                        <h4>CÔNG TY CỔ PHẦN THỰC PHẨM DINH DƯỠNG NUTIFOOD</h4>
+                    </div>
+                </div>
+                <div class="topcmp wow animate__tada">
+                    <div>
+                        <div class="imgcmp"><img src="images/company/acecook.jpg" alt="Kinh doanh / Bán hàng"/></div>
+                        <h4>CÔNG TY CỔ PHẦN ACECOOK</h4>
+                    </div>
+                </div>
+                <div class="topcmp wow animate__tada">
+                    <div>
+                        <div class="imgcmp"><img src="images/company/cty_ABC.png" alt="Marketting / Truyền thông"/></div>
+                        <h4>CÔNG TY CỔ PHẦN ABC VIỆT NAM</h4>
+                    </div>
+                </div>
+                <div class="topcmp wow animate__tada">
+                    <div>
+                        <div class="imgcmp"><img src="images/company/cty_pnj.png" alt="Kinh doanh / Bán hàng"/></div>
+                        <h4>CÔNG TY CỔ PHẦN VÀNG BẠC ĐÁ QUÝ PHÚ NHUẬN  - PNJ</h4>
+                    </div>
+                </div>
+                <div class="topcmp wow animate__tada">
+                    <div>
+                        <div class="imgcmp"><img src="images/company/fpt-logo.png" alt="Kinh doanh / Bán hàng"/></div>
+                        <h4>FPT SOFTWARE</h4>
+                    </div>
+                </div>
+                <div class="topcmp wow animate__tada">
+                    <div>
+                        <div class="imgcmp"><img src="images/company/Panasonic-logo.png" alt="Marketting / Truyền thông"/></div>
+                        <h4>CÔNG TY TNHH PANASONIC APPLIANCES VIỆT NAM</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <aside class="theme flex">
+        <i class="fa-solid fa-sun haoquang" id="sun"></i>
+        <i class="fa-solid fa-moon" id="moon"></i></i>
+    </aside>
+    <aside class="ads flex">
+        <a href="#"><img src="./images/gamevui_poster.gif"></a>
+         <a href="#"><img src="./images/gamevui_poster.gif"></a>
+    </aside>
+    <aside class="icon">
+        <div>
+            <p class="uy">Uy tín 100%</p>
+            <i class="fa-solid fa-shield-cat"></i>
+        </div>
+        <div><a href="#"><i class="fa-regular fa-circle-up"></i></a></div>
+    </aside>
+    <footer class="footer">
+        <div class="partner">
+            <h2>LIÊN KẾT WEBSITE</h2>
+            <a href="https://ou.edu.vn/" target="_blank"><img src="images/ou.png" alt="OU"/></a>
+            <a href="#" target="_blank"><img src="images/company/K&T.png"/></a>
+        </div>
+        <div class="contact flex">
+            <div>
+                <h2>Thông tin chung</h2>
+                <p>Địa chỉ: Khu dân cư Nhơn Đức, huyện Nhà Bè, Thành phố Hồ Chí Minh</p>
+                <p>Liên hệ: 0000000000</p>
+                <p>Email: <a href="mailto:2351050208vy@ou.edu.vn" target="_blank">2351050208vy@ou.edu.vn</a></p>
+            </div>
+            <div>
+                <h2>Kết nối với chúng tôi</h2>
+                <div class="flex">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="images/Facebook_Logo_(2019).png" alt="facebook"></a>
+                    <a href="https://www.google.com/intl/en-US/gmail/about/" target="_blank"><img src="images/Gmail_icon_(2020).svg.png" alt="gmail"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.png"/></a>
+                    <a href="https://www.tiktok.com/" target="_blank"><img src="images/tiktok.png"/></a>
+                    <a href="https://id.zalo.me/account?continue=https%3A%2F%2Fchat.zalo.me%2F" target="_blank"><img src="images/zalo.png"/></a>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
