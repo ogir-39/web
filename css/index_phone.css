@@ -39,7 +39,7 @@ body{
 }
 
 /* BLOCK */
-.lists>h2
+.lists>h2 , .gcareer
 {
     display: block;
 }
