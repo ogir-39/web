@@ -283,7 +283,7 @@ header{
 /* SECTION SEARCH */
 .mainsearch{
     align-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     margin: auto;
     padding-left: 0.7rem;
@@ -303,6 +303,7 @@ header{
     border: 1px solid gray;
     border-radius: 3rem;
     align-self : center;
+    max-height: 40px;
 }
 
 .mainsearch>button:last-child{
@@ -321,6 +322,11 @@ header{
 
 .bigsearch{
     width: 50%;
+    align-self: center;
+}
+
+.bigsearch+div{
+    align-self: center;
 }
 
 .bigsearch>input{
@@ -354,6 +360,8 @@ header{
 .topjob{
     display: block;
     width: 20%;
+    min-width: 250px;
+    max-width: 290px;
     padding: 5px;
 }
 
@@ -362,6 +370,8 @@ header{
     box-sizing: border-box;
     text-align: center;
     border-radius: 1.5rem;
+    min-height: 280px;
+    max-height: 300px;
 }
 
 .imgjob{
@@ -515,7 +525,9 @@ header{
 
 
 .imgcareer>img{
-    width: 85%;
+    width: 100%;
+    max-height: 100%;
+    
 }
 
 .career .detail{
@@ -676,6 +688,7 @@ header{
 .topcmp{
     display: block;
     width: 30%;
+    max-width: 300px;
     box-sizing: border-box;
     padding: 0.8rem;
     justify-self: center;
@@ -1070,9 +1083,11 @@ footer>div:nth-child(2)>img{
 
 @keyframes sunOff{
     from {
-        box-shadow: 0 0 1rem 0.2rem;
+        color:gold;
+        box-shadow: 0 0 1rem 0.5rem;
     }
     to {
+        color:gainsboro;
         box-shadow: 0 0 0 0;
     }
 }
