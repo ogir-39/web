@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- CSS -->
     <link href="index.css" rel="stylesheet"/>
-    <link rel="stylesheet" media="screen and (max-width: 500px)" href="css/index_phone.css">
+    <link rel="stylesheet" media="screen and (max-width: 1023px)" href="css/index_phone.css">
     <!-- CDN -->
     <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
     <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
@@ -26,7 +26,7 @@
                 <li><a href="index.html"><img src="images/cat.png" alt="LOGO"/></a></li>
                 <li><a href="#lists">Công việc</a></li>
                 <li><a href="#topcmps">Doanh nghiệp</a></li>
-                <li><a href="html/cv.html" target="_blank">Mẫu hồ sơ</a></li>
+                <li><a href="html/cv.html" >Mẫu hồ sơ</a></li>
             </ul>
             <div class="flex searchTaskbar">
                 <i class="fa-solid fa-xmark hidden" id="click" title="Đóng thanh tìm kiếm"></i>
@@ -61,7 +61,8 @@
                 <i class="fa-solid fa-bars"></i> 
             </div>
             <div class="logo">
-                <img src="images/cat.png"/>
+                <a href="./index.html"><img src="./images/cat.png"/>
+                </a>
             </div>
             <div class="user" style="visibility: hidden;">
                 <i class="fa-solid fa-user"></i>
@@ -72,13 +73,13 @@
         <li><i class="fa-solid fa-xmark"></i></li>
         <li><img src="images/cat.png"/></li>
         <li>
-            <input type="text" placeholder="Nhập"/>
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input id="menuPhoneSearch" type="text" placeholder="Nhập"/>
+            <button><i class="fa-solid fa-magnifying-glass" id="clickMenuP"></i></button>
         </li>
         <li><i class="fa-regular fa-bell"></i> Thông báo</li>
-        <li><i class="fa-solid fa-briefcase"></i> Công việc</li>
-        <li><i class="fa-regular fa-building"></i> Doanh nghiệp</li>
-        <li><i class="fa-regular fa-newspaper"></i><a href="html/cv.html" target="_blank">Mẫu hồ sơ</a></li>
+        <li><i class="fa-solid fa-briefcase"></i><a href="#lists">Công việc</a></li>
+        <li><i class="fa-regular fa-building"></i> <a href="#topcmps">Doanh nghiệp</a></li>
+        <li><i class="fa-regular fa-newspaper"></i><a href="html/cv.html">Mẫu hồ sơ</a></li>
         <li><i class="fa-solid fa-user"></i><a href="html/login.html">Đăng nhập</a></li>
         <li><i class="fa-solid fa-user-plus"></i><a href="html/register.html">Đăng ký</a></li>
     </ul>
@@ -106,21 +107,21 @@
         <h2 class="flex">
             <div class="words">
                 TOP
-                <span class="word">TOP</span>
+                <span class="word alpha">TOP</span>
             </div>
             <div class="words">
                 NGÀNH
-                <span class="word">NGÀNH</span>
+                <span class="word alpha">NGÀNH</span>
             </div>
     
             <div class="words">
                 NGHỀ
-                <span class="word">NGHỀ</span>
+                <span class="word alpha">NGHỀ</span>
             </div>
             
             <div class="words">
                 HOT
-                <span class="word">HOT</span>
+                <span class="word alpha">HOT</span>
             </div>
         </h2>
         <div class="topjobs flex">
@@ -165,24 +166,24 @@
         <h2 class="flex">
             <div class="words">
                 TOP
-                <span class="word">TOP</span>
+                <span class="word beta">TOP</span>
             </div>
             <div class="words">
                 NGÀNH
-                <span class="word">NGÀNH</span>
+                <span class="word beta">NGÀNH</span>
             </div>
     
             <div class="words">
                 NGHỀ
-                <span class="word">NGHỀ</span>
+                <span class="word beta">NGHỀ</span>
             </div>
             
             <div class="words">
                 HOT
-                <span class="word">HOT</span>
+                <span class="word beta">HOT</span>
             </div>
         </h2>
-        <div class="topjobs_p flex">
+        <div class="topjobs_p flex" id="topjobs_p">
             <div class="topjob wow animate__zoomIn">
                 <div>
                     <p class="imgjob"><img src="images/kinhdoanh.png" alt="Kinh doanh / Bán hàng"/></p>
@@ -233,7 +234,7 @@
         </div>
         <div class="list flex">
             <div class="career">
-                <a href="html/detail_career.html" target="_blank"><div class="flex">
+                <a href="html/detail_career.html" ><div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Apple-Logo.png" alt="ảnh"/>
                         </div>
@@ -250,7 +251,7 @@
               
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/fpt-logo.png" alt="ảnh"/>
@@ -267,7 +268,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/logo-vnpt-3.png" alt="ảnh"/>
@@ -284,7 +285,7 @@
                 </a>
             </div>            
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/logo_1.png" alt="ảnh"/>
@@ -301,7 +302,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/chef_food.png" alt="ảnh"/>
@@ -318,7 +319,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Nike-Logo.png" alt="ảnh"/>
@@ -335,7 +336,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Pepsi-Logo-1969.png" alt="ảnh"/>
@@ -352,7 +353,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Samsung_Logo.svg.png" alt="ảnh"/>
@@ -369,7 +370,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/drink.png" alt="ảnh"/>
@@ -386,7 +387,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/—Pngtree—a beautiful logo of_15918990.png" alt="ảnh"/>
@@ -403,7 +404,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/—Pngtree—beautiful versus logo_6403335.png" alt="ảnh"/>
@@ -420,7 +421,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/company-logo-transparent-png-19.png" alt="ảnh"/>
@@ -437,7 +438,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank"><div class="flex">
+                <a href="html/detail_career.html" ><div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Apple-Logo.png" alt="ảnh"/>
                         </div>
@@ -454,7 +455,7 @@
               
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/fpt-logo.png" alt="ảnh"/>
@@ -471,7 +472,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/logo-vnpt-3.png" alt="ảnh"/>
@@ -488,7 +489,7 @@
                 </a>
             </div> 
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/logo_1.png" alt="ảnh"/>
@@ -505,7 +506,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/chef_food.png" alt="ảnh"/>
@@ -522,7 +523,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Nike-Logo.png" alt="ảnh"/>
@@ -539,7 +540,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Pepsi-Logo-1969.png" alt="ảnh"/>
@@ -556,7 +557,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Samsung_Logo.svg.png" alt="ảnh"/>
@@ -573,7 +574,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/drink.png" alt="ảnh"/>
@@ -590,7 +591,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/—Pngtree—a beautiful logo of_15918990.png" alt="ảnh"/>
@@ -607,7 +608,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/—Pngtree—beautiful versus logo_6403335.png" alt="ảnh"/>
@@ -624,7 +625,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/company-logo-transparent-png-19.png" alt="ảnh"/>
@@ -641,7 +642,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank"><div class="flex">
+                <a href="html/detail_career.html" ><div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Apple-Logo.png" alt="ảnh"/>
                         </div>
@@ -657,7 +658,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/fpt-logo.png" alt="ảnh"/>
@@ -674,7 +675,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/logo-vnpt-3.png" alt="ảnh"/>
@@ -691,7 +692,7 @@
                 </a>
             </div>            
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/logo_1.png" alt="ảnh"/>
@@ -708,7 +709,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/chef_food.png" alt="ảnh"/>
@@ -725,7 +726,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Nike-Logo.png" alt="ảnh"/>
@@ -742,7 +743,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Pepsi-Logo-1969.png" alt="ảnh"/>
@@ -759,7 +760,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/Samsung_Logo.svg.png" alt="ảnh"/>
@@ -776,7 +777,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/drink.png" alt="ảnh"/>
@@ -793,7 +794,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/—Pngtree—a beautiful logo of_15918990.png" alt="ảnh"/>
@@ -810,7 +811,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/—Pngtree—beautiful versus logo_6403335.png" alt="ảnh"/>
@@ -827,7 +828,7 @@
                 </a>
             </div>
             <div class="career">
-                <a href="html/detail_career.html" target="_blank">
+                <a href="html/detail_career.html" >
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="images/company/company-logo-transparent-png-19.png" alt="ảnh"/>
@@ -1444,7 +1445,7 @@
         </div>
         <div class="partner hidden">
             <h2>LIÊN KẾT WEBSITE</h2>
-            <a href="https://ou.edu.vn/" target="_blank"><img src="images/ou.png" alt="OU"/></a>
+            <a href="https://ou.edu.vn/" target="_blank" ><img src="images/ou.png" alt="OU"/></a>
             <a href="#" target="_blank"><img src="images/company/K&T.png"/></a>
         </div>
         <div class="gcareer">
