@@ -7,10 +7,14 @@
     <link href="../images/G_career.png" rel="shortcut icon"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- CSS -->
     <link href="../css/detail_career.css" rel="stylesheet"/>
+    <link rel="stylesheet" media="screen and (max-width: 1023px)" href="../css/detail_phone.css">
+    <!-- LINK -->
     <link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
     <script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
     <script> new WOW().init(); </script>
+    <!-- JS -->
     <script src="../javascript/jquery-3.7.1.min.js"></script>
     <script src="../javascript/detail_career.js"></script>
 </head>
@@ -22,7 +26,7 @@
                 <li><a href="../index.html"><img src="../images/cat.png" alt="LOGO"/></a></li>
                 <li><a href="#below">Công việc</a></li>
                 <li><a href="#below">Doanh nghiệp</a></li>
-                <li><a href="../html/cv.html" target="_blank">Mẫu hồ sơ</a></li>
+                <li><a href="../html/cv.html">Mẫu hồ sơ</a></li>
             </ul>
             <div class="flex searchTaskbar">
                 <i class="fa-solid fa-xmark hidden" id="click" title="Đóng thanh tìm kiếm"></i>
@@ -32,7 +36,7 @@
                 </div>
             </div>
             <ul class="users flex">
-                <li class="searchIcon hidden">
+                <li class="searchIcon">
                     <i class="fa-solid fa-magnifying-glass click" id="click1" title="Mở thanh tìm kiếm"></i>
                 </li>
                 <li class="noti">
@@ -52,7 +56,37 @@
                 </li>
             </ul>
         </div>
+        <div class="phone flex">
+            <div class="menuPhone">
+                <i class="fa-solid fa-bars"></i> 
+            </div>
+            <div class="logo">
+                <a href="../index.html"><img src="../images/cat.png"/></a>
+            </div>
+            <div class="user" style="visibility: hidden;">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
     </header>
+    <ul class="subMenuP">
+        <li><i class="fa-solid fa-xmark"></i></li>
+        <li><img src="../images/cat.png"/></li>
+        <li>
+            <input type="text" placeholder="Nhập"/>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </li>
+        <li class="bell"><i class="fa-regular fa-bell"></i><a href="#">Thông báo</a></li>
+        <li><i class="fa-solid fa-briefcase"></i><a href="../index.html">Công việc</a></li>
+        <li><i class="fa-regular fa-building"></i><a href="../index.html">Doanh nghiệp</a></li>
+        <li><i class="fa-regular fa-newspaper"></i><a href="../html/cv.html">Mẫu hồ sơ</a></li>
+        <li><i class="fa-solid fa-user"></i><a href="../html/login.html">Đăng nhập</a></li>
+        <li><i class="fa-solid fa-user-plus"></i><a href="../html/register.html">Đăng ký</a></li>
+    </ul>
+    <div class="thongBao">
+        <img src="../images/sad_face.png">
+        <i class="fa-regular fa-circle-xmark"></i>
+        <div>Bạn chưa có thông báo</div>
+    </div>
     <section class="bigbackground">
         <p>Chào mừng đến với Gcareer</p>
     </section>
@@ -84,9 +118,9 @@
                 <p>Thông tin liên hệ</p>
                 <ul>
                     <li><i class="fa-solid fa-phone"></i> : <a>0000000000</a></li>
-                    <li><i class="fa-solid fa-envelope"></i> : <a href="mailto:2351050208vy@ou.edu.vn" target="_blank">2351050208vy@ou.edu.vn</a></li>
-                    <li><i class="fa-brands fa-facebook"></i> : <a href="https://www.facebook.com/" target="_blank">Apple Store</a></li>
-                    <li><i class="fa-solid fa-map-location-dot"></i> : <a href="https://maps.app.goo.gl/NY9cN3zUxjh9Zyng6" target="_blank">Apple store</a></li>
+                    <li><i class="fa-solid fa-envelope"></i> : <a href="mailto:2351050208vy@ou.edu.vn">2351050208vy@ou.edu.vn</a></li>
+                    <li><i class="fa-brands fa-facebook"></i> : <a href="https://www.facebook.com/">Apple Store</a></li>
+                    <li><i class="fa-solid fa-map-location-dot"></i> : <a href="https://maps.app.goo.gl/NY9cN3zUxjh9Zyng6">Apple store</a></li>
                 </ul>
             </div>
         </div>
@@ -116,14 +150,72 @@
             <p>Hồ Chí Minh: 1/19 Thạch Lam, Phú Thọ Hòa, Tân Phú.</p>
         </div>
     </section>
-    <section class="wallpaper">
-        
+    <section class="main_p wow animate__zoomIn">
+        <div class="info flex ">
+            <h1>Nhân viên bán hàng / Sales</h1>
+            <div class="salary flex">
+                <i class="fa-solid fa-sack-dollar"></i>
+                <p>10-15 triệu</p>
+            </div>
+            <div class="location flex">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Hồ Chí Minh</p>
+            </div>
+            <div class="flex">
+                <div class="image_career">
+                    <img src="../images/company/Apple-Logo.png" alt="ảnh" class="imgcareer"/>
+                </div>
+                <div class="cmp flex">
+                    <i class="fa-solid fa-building"></i>
+                    <p>Cửa hàng điện tử Apple</p>
+                </div>
+            </div>
+        </div>
+        <ul class="tab flex">
+            <li><a href="#details">Chi tiết</a></li>
+            <li><a href="#lienhe">Liên hệ</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="details" id="details">
+                <h3>Mô tả công việc</h3>
+                <ol>
+                    <li>Tìm kiếm khách hàng tiềm năng qua các mối quan hệ và ứng dụng mạng xã hội (công ty hỗ trợ chi phí).</li>
+                    <li>Giới thiệu và tư vấn sản phẩm và các dịch vụ kèm theo.</li>
+                    <li>Thực hiện tư vấn, đàm phán, ký kết hợp đồng mua bán.</li>
+                </ol>
+                <h3>Yêu cầu ứng viên</h3>
+                <ol>
+                    <li>Độ tuổi từ 18 - 29 tuổi.</li>
+                    <li>Chăm chỉ, nhanh nhẹn, hoạt ngôn.</li>
+                    <li>Có tinh thần trách nhiệm trong công việc, cẩn thận, trung thực.</li>
+                    <li>Khả năng làm việc độc lập, chịu được áp lực trong công việc.</li>
+                    <p><b>*Yêu cầu:</b> nộp CV bằng tiếng Anh.</p>
+                </ol>
+                <h3>Quyền lợi</h3>
+                <ul>
+                    <li>Mức lương: 15-20 triệu/tháng.</li>
+                    <li>Lương tháng 13, thưởng lễ, Tết,...</li>
+                    <li>Chế độ BHYT, BHXH 100% lương.</li>
+                    <li>Môi trường làm việc năng động và hòa hợp.</li>
+                </ul>
+                <h3>Địa điểm làm việc</h3>
+                <p>Hồ Chí Minh: 1/19 Thạch Lam, Phú Thọ Hòa, Tân Phú.</p>
+            </div>
+            <div class="lienhe" id="lienhe">
+                <ul>
+                    <li><i class="fa-solid fa-phone"></i> : <a>0000000000</a></li>
+                    <li><i class="fa-solid fa-envelope"></i> : <a href="mailto:2351050208vy@ou.edu.vn">2351050208vy@ou.edu.vn</a></li>
+                    <li><i class="fa-brands fa-facebook"></i> : <a href="https://www.facebook.com/">Apple Store</a></li>
+                    <li><i class="fa-solid fa-map-location-dot"></i> : <a href="https://maps.app.goo.gl/NY9cN3zUxjh9Zyng6">Apple store</a></li>
+                </ul>
+            </div>
+        </div>
     </section>
     <section class="below flex" id="below">
         <div class="more">
             <h2>Một số việc làm khác</h2>
             <div class="career wow animate__lightSpeedInLeft">
-                <a href="detail_career.html" target="_blank">
+                <a href="detail_career.html">
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="../images/company/fpt-logo.png" alt="ảnh"/>
@@ -140,7 +232,7 @@
                 </a>
             </div>
             <div class="career wow animate__lightSpeedInLeft">
-                <a href="detail_career.html" target="_blank">
+                <a href="detail_career.html">
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="../images/company/logo-vnpt-3.png" alt="ảnh"/>
@@ -157,7 +249,7 @@
                 </a>
             </div>            
             <div class="career wow animate__lightSpeedInLeft">
-                <a href="detail_career.html" target="_blank">
+                <a href="detail_career.html">
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="../images/company/logo_1.png" alt="ảnh"/>
@@ -174,7 +266,7 @@
                 </a>
             </div>
             <div class="career wow animate__lightSpeedInLeft">
-                <a href="../html/detail_career.html" target="_blank">
+                <a href="../html/detail_career.html">
                     <div class="flex">
                         <div class="imgcareer">
                             <img src="../images/company/chef_food.png" alt="ảnh"/>
@@ -192,7 +284,7 @@
             </div>
         </div>
         <div class="topcmps" id="topcmps">
-            <h2>Một số doanh nghiệp nổi bật</h2>
+            <h2>Top doanh nghiệp nổi bật</h2>
             <div class="flex">
                 <div class="topcmp wow animate__lightSpeedInRight">
                     <div>
@@ -219,8 +311,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>   
     </section>
     <aside class="theme flex">
         <i class="fa-solid fa-sun haoquang" id="sun"></i>
@@ -238,10 +329,17 @@
         <div><a href="#"><i class="fa-regular fa-circle-up"></i></a></div>
     </aside>
     <footer class="footer">
-        <div class="partner">
+        <div class="ads_p">
+            <img src="../images/gamevui_posterngang.gif"/>
+        </div>
+        <div class="partner hidden">
             <h2>LIÊN KẾT WEBSITE</h2>
             <a href="https://ou.edu.vn/" target="_blank"><img src="../images/ou.png" alt="OU"/></a>
             <a href="#" target="_blank"><img src="../images/company/K&T.png"/></a>
+        </div>
+        <div class="gcareer">
+            <img src="../images/cat.png" alt="Gcareer"/>
+            <p>Website giới thiệu việc làm uy tín</p>
         </div>
         <div class="contact flex">
             <div>

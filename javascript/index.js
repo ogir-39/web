@@ -1,3 +1,6 @@
+var bienDoiChu;
+var bienDoiChuMobile;
+
 function thuGon() {
     let careers = document.querySelectorAll('.career');
 
@@ -50,6 +53,15 @@ function moRongMobile() {
 
 }
 
+function kiemTraChu() {
+    let word = document.querySelectorAll('.word');
+    $(word).off();
+    $(word).removeClass('chuKeoDai');
+    $(word).removeClass('chuKeoDaiNguoc');
+    clearInterval(bienDoiChu);
+    clearInterval(bienDoiChuMobile);
+    $(word).css('width', '0');
+}
 
 function kiemTraMoRong(flag) {
     // đang search thì ẩn
@@ -70,8 +82,12 @@ function chuyenDoiChuoi(str) {
 
 
 function chuKeoDaiNguoc(word, index = word.length - 1) {
+
+    $(window).resize(function () {
+        return;
+    });
+
     if (index < 0) {
-        //console.log('index cua ham chu keo dai nguoc: ',index);
         return;
     };
     $(word[index]).addClass('chuKeoDaiNguoc').one('animationend', function () {
@@ -83,12 +99,17 @@ function chuKeoDaiNguoc(word, index = word.length - 1) {
 }
 
 function chuKeoDai(word, index = 0) {
+
+    $(window).resize(function () {
+        return;
+    });
+
     if (index >= word.length) {
         flag = false;
         return chuKeoDaiNguoc(word, word.length - 1);
 
     }
-    
+
 
     if (flag == true) return;
 
@@ -110,16 +131,23 @@ function anArea() {
     }
 }
 
-function desktop()
-{
+let co = false; //false = bright mode
+
+
+function desktop() {
+    $('*').off();
+
     $('.subMenuP').hide();
     $('.word').off();
+    $('.words').css('color', '');
+
     let cntFilter = 1;
     let btn = document.querySelector('#btnMoRong>div');
     let cntSearch = 1;
     let cnt = 1;
     let flagMoRong = false;
     thuGon();
+
 
     // javascript cho nút mở rộng
     $('#btnMoRong > div').click(function () {
@@ -167,10 +195,8 @@ function desktop()
         var footer = document.querySelector('.footer');
         let maxHeight = document.body.offsetHeight;
 
-        // console.log(maxHeight);
         let footerCal = maxHeight - footer.offsetHeight - 300;
         let max = footerCal - 250 + 30;
-
 
 
         if (top >= 0 && top < max) {
@@ -238,6 +264,100 @@ function desktop()
 
     });
 
+
+    if (co == true) {
+    
+        $('.imgjob + div').css('color', 'white');
+        $('.imgjob + p').css('color', 'white');
+        $('.word').css('color', 'white');
+        $('.topjob p').css('color', '');
+        $('.topjob>div').css('background-color', 'rgba(2, 47, 68, 0.28)');
+        let menu = document.querySelectorAll('.menu>li>a');
+        for (let i = 0; i < menu.length; i++) {
+            $(menu[i + 1]).on('mouseenter', function () {
+                $(this).css({
+                    'color': 'lightskyblue',
+                    'background-color': 'rgb(49,51,56)'
+                })
+            })
+            $(menu[i + 1]).on('mouseleave', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+        }
+        let users = document.querySelectorAll('.users>li');
+        for (let y = 0; y < users.length; y++) {
+            $(users[y]).on('mouseenter', function () {
+                $(this).css({
+                    'color': 'lightskyblue',
+                    'background-color': 'rgb(49,51,56)'
+                })
+            })
+            $(users[y]).on('mouseleave', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+        }
+        $('.salary').css({
+            'color': 'lightskyblue'
+        })
+        $('.detail>p').css({
+            'color': 'lightgray'
+        })
+        $('.name').css({
+            'color': 'white'
+        })
+    }
+    else {
+        $('.imgjob + div').css('color', '');
+        $('.imgjob + p').css('color', '');
+        $('.word').css('color', '');
+        $('.topjob p').css('color', '');
+        $('.topjob>div').css('background-color', '');
+        $('.salary').css({
+            'color': ''
+        })
+        $('.detail>p').css({
+            'color': ''
+        })
+        $('.name').css({
+            'color': ''
+        })
+        let menu = document.querySelectorAll('.menu>li>a');
+        for (let i = 0; i < menu.length; i++) {
+            $(menu[i + 1]).on('mouseenter', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+            $(menu[i + 1]).on('mouseleave', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+        }
+        let users = document.querySelectorAll('.users>li');
+        for (let y = 0; y < users.length; y++) {
+            $(users[y]).on('mouseenter', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+            $(users[y]).on('mouseleave', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+        }
+    }
 
     // javascript cho sự kiện tìm kiếm ở thanh taskbar
     $('#taskbarSearch').change(function () {
@@ -538,7 +658,7 @@ function desktop()
 
 
     // DARK MODE
-    let co = false; //false = bright mode
+    //let co = false; //false = bright mode
     //chỉnh từ dark mode sang bright mode
     $('#sun').click(function () {
         if (co == true) {
@@ -800,19 +920,7 @@ function desktop()
             $('.imgcmp>img').css({
                 'background-color': 'white'
             })
-            let topcmp = document.querySelectorAll('.topcmp');
-            for (let x = 0; x < topcmp.length; x++) {
-                $(topcmp[x]).on('mouseenter', function () {
-                    $(this).css({
-                        'background': 'radial-gradient(rgba(135, 206, 250, 0.4),#292a2d)'
-                    })
-                })
-                $(topcmp[x]).on('mouseleave', function () {
-                    $(this).css({
-                        'background': 'initial'
-                    })
-                })
-            }
+         
             $('.topcmp h4').css({
                 'color': 'whitesmoke'
             })
@@ -868,51 +976,7 @@ function desktop()
         {
             $('#sun').removeClass('haoquang').addClass('sunOff');
             $('#sun').css({
-                'color': '',
-                'border': '0',
-            })
-            $('#moon').removeClass('moonOff').addClass('moonOn');
-        }
-    }) // HOVER DARK MODE BUTTONS
-    $('#moon').on('mouseenter', function () {
-        if (co == false) { //bright mode
-            $('#sun').removeClass('haoquang').addClass('sunOff').on('animationend', function () {
-                $('#sun').css({
-                    'color': 'gainsboro',
-                    'border': '0'
-                })
-            })
-            $('#moon').removeClass('moonOff').addClass('moonOn');
-        }
-    })
-    $('#moon').on('mouseleave', function () {
-        if (co == false) //bright mode
-        {
-            $('#sun').removeClass('sunOff').addClass('haoquang');
-            $('#sun').css({
-                'color': 'gold',
-                'border': '3px solid gold',
-                'box-shadow': '0 0 0 0'
-            })
-            $('#moon').removeClass('moonOn').addClass('moonOff');
-        }
-    })
-    $('#sun').on('mouseenter', function () {
-        if (co == true) { //dark mode
-            $('#sun').removeClass('sunOff').addClass('haoquang');
-            $('#sun').css({
-                'color': 'gold',
-                'border': '3px solid gold'
-            })
-            $('#moon').removeClass('moonOn').addClass('moonOff');
-        }
-    })
-    $('#sun').on('mouseleave', function () {
-        if (co == true) //dark mode
-        {
-            $('#sun').removeClass('haoquang').addClass('sunOff');
-            $('#sun').css({
-                'color': '',
+                'color': 'gainsboro',
                 'border': '0',
             })
             $('#moon').removeClass('moonOff').addClass('moonOn');
@@ -946,7 +1010,7 @@ function desktop()
     chuKeoDai(word, 0);
 
     // tổng thời gian cho cả 2 chu kì animation là 16s
-    setInterval(function () {
+    bienDoiChu = setInterval(function () {
 
         flag = false;
         chuKeoDai(word, 0);
@@ -1161,11 +1225,16 @@ function desktop()
     }
 }
 
-function mobile()
-{
+
+
+let coThuGon = false
+
+function mobile() {
+    $('*').off();
+
     $('.subMenuP').hide();
     $('.menuPhone').on('click', function () {
-        
+
         $('.subMenuP').show();
         $('.subMenuP>li:first-child>i').on('click', function () {
             $('.subMenuP').hide();
@@ -1174,16 +1243,90 @@ function mobile()
 
     $('.word').off();
 
+    if (co == true) {
+
+        $('.underline').css('background', 'white');
+        $('.subMenuP>li>input').css('color', 'white');
+        $('.subMenuP>li>button > i').css('color', 'white');
+        $('.subMenuP>li>a').css('color', 'white');
+        $('.subMenuP>li').css('color', 'white');
+        $('.subMenuP').css('background-color', '#292a2d');
+        $('.phone').css('background-color', '#292a2d');
+        $('.topjobs_p').css('background-color', '#202124');
+        $('.topjobs_p .topjob>div').css('background-color', '#292a2d');
+        $('.imgjob + div').css('color', 'white');
+        $('.topjobs_p .topjob p').css('color', 'white');
+
+        $('.word').css('color', 'lightskyblue');
+        $('.words').css('color', 'white');
+
+
+        $('.salary').css({
+            'color': 'lightskyblue'
+        })
+        $('.detail>p').css({
+            'color': 'lightgray'
+        })
+        $('.name').css({
+            'color': 'white'
+        })
+
+    }
+    else {
+        $('.topcmps').css('background-color', '');
+        $('.underline').css('background', '');
+        $('.subMenuP>li>input').css('color', '');
+        $('.subMenuP>li>button > i').css('color', '');
+        $('.subMenuP>li>a').css('color', '');
+        $('.subMenuP>li').css('color', '');
+        $('.subMenuP').css('background-color', '');
+        $('.phone').css('background-color', '');
+        $('.topjobs_p').css('background-color', '');
+        $('.topjobs_p .topjob>div').css('background-color', '');
+        $('.topjobs_p .topjob p').css('color', '');
+        $('.imgjob + div').css('color', '');
+
+        $('.word').css('color', '');
+        $('.words').css('color', '');
+
+        $('.salary').css({
+            'color': ''
+        })
+        $('.detail>p').css({
+            'color': ''
+        })
+
+        $('.name').css({
+            'color': ''
+        })
+
+    }
+
+    let bell = document.querySelector('.bell');
+
+    bell.addEventListener('click', function () {
+
+        $('.thongBao').addClass("active");
+    });
+
+    $('.thongBao i').on('click', function () {
+
+        $('.thongBao').removeClass("active");
+    });
+
 
     let cntFilter = 1;
     let btn = document.querySelector('#btnMoRong>div');
     let cntSearch = 1;
     let cnt = 1;
     let flagMoRong = false;
-    thuGon();
-
+    if (coThuGon == false) {
+        thuGon();
+        coThuGon = true;
+    }
     // javascript cho nút mở rộng
     $('#btnMoRong > div').click(function () {
+
 
         let chu = $('#btnMoRong>div>div').text().toLowerCase();
 
@@ -1199,13 +1342,11 @@ function mobile()
             moRongMobile();
             // btn.innerHTML = "Thu gọn";
 
-            window.scrollTo(0, 965);
         }
         else {
             thuGonMobile();
             flagMoRong = false;
             // btn.innerHTML = "Xem tất cả";
-            window.scrollTo(0, 465);
         }
     });
 
@@ -1228,7 +1369,6 @@ function mobile()
         var footer = document.querySelector('.footer');
         let maxHeight = document.body.offsetHeight;
 
-        // console.log(maxHeight);
         let footerCal = maxHeight - footer.offsetHeight - 300;
         let max = footerCal - 250 + 30;
 
@@ -1470,7 +1610,6 @@ function mobile()
 
 
     // DARK MODE
-    let co = false; //false = bright mode
     //chỉnh từ dark mode sang bright mode
     $('#sun').click(function () {
         if (co == true) {
@@ -1488,10 +1627,9 @@ function mobile()
 
             let kytu = document.querySelectorAll('.words');
 
-            for(let x of kytu)
-            {
+            for (let x of kytu) {
                 $(x).css({
-                    'color':''
+                    'color': ''
                 })
             }
 
@@ -1640,7 +1778,6 @@ function mobile()
     //chuyển từ bright mode sang dark mode
     $('#moon').click(function () {
         if (co == false) {
-            $('.topcmps').css('background-color', '#292a2d');
             $('.underline').css('background', 'white');
             $('.subMenuP>li>input').css('color', 'white');
             $('.subMenuP>li>button > i').css('color', 'white');
@@ -1649,14 +1786,13 @@ function mobile()
             $('.subMenuP').css('background-color', '#292a2d');
             $('.phone').css('background-color', '#292a2d');
             $('.topjobs_p').css('background-color', '#202124');
-            $('.topjobs_p .topjob>div').css('background-color', 'rgba(0, 0, 0, 0.28)');
+            $('.topjobs_p .topjob>div').css('background-color', '#292a2d');
             $('.imgjob + div,p').css('color', 'white');
             let kytu = document.querySelectorAll('.words');
 
-            for(let x of kytu)
-            {
+            for (let x of kytu) {
                 $(x).css({
-                    'color':'white'
+                    'color': 'white'
                 })
             }
             $('.wallpaper img').attr('src', 'images/GCareer1.png');
@@ -1705,11 +1841,11 @@ function mobile()
                     })
                 })
             }
-            $('.topjob>div').css({
-                'background-color': '#022f4447'
-            })
+            // $('.topjob>div').css({
+            //     'background-color': 'black'
+            // })
             $('.lists').css({
-                'background-color': '#292a2d'
+                'background-color': 'transparent'
             })
             $('.career>a>div').css({
                 'background-color': 'rgb(49,51,56)'
@@ -1771,19 +1907,7 @@ function mobile()
             $('.imgcmp>img').css({
                 'background-color': 'white'
             })
-            let topcmp = document.querySelectorAll('.topcmp');
-            for (let x = 0; x < topcmp.length; x++) {
-                $(topcmp[x]).on('mouseenter', function () {
-                    $(this).css({
-                        'background': 'radial-gradient(rgba(135, 206, 250, 0.4),#292a2d)'
-                    })
-                })
-                $(topcmp[x]).on('mouseleave', function () {
-                    $(this).css({
-                        'background': 'initial'
-                    })
-                })
-            }
+
             $('.topcmp h4').css({
                 'color': 'whitesmoke'
             })
@@ -1800,7 +1924,7 @@ function mobile()
         }
     });
 
-    
+
     $('#moon').on('mouseenter', function () {
         if (co == false) { //bright mode
             $('#sun').removeClass('haoquang').addClass('sunOff').on('animationend', function () {
@@ -1839,7 +1963,7 @@ function mobile()
         {
             $('#sun').removeClass('haoquang').addClass('sunOff');
             $('#sun').css({
-                'color': '',
+                'color': 'gainsboro',
                 'border': '0',
             })
             $('#moon').removeClass('moonOff').addClass('moonOn');
@@ -1854,7 +1978,7 @@ function mobile()
 
     chuKeoDai(word, 0);
     // tổng thời gian cho cả 2 chu kì animation là 16s
-    setInterval(function () {
+    bienDoiChuMobile = setInterval(function () {
 
         flag = false;
         chuKeoDai(word, 0);
@@ -2068,7 +2192,7 @@ function mobile()
 
     }
 
-    $('#clickMenuP').click(function(){
+    $('#clickMenuP').click(function () {
         let careers = document.querySelectorAll('.career');
         let name = document.querySelectorAll('div.detail > p.name');
 
@@ -2081,26 +2205,21 @@ function mobile()
             kiemTraMoRong(flagMoRong);
         }
 
-        for(let i = 0; i<name.length;i++)
-        {
+        for (let i = 0; i < name.length; i++) {
             let chuoiSauKhiChuyenDoi = chuyenDoiChuoi(name[i].innerHTML.toLowerCase());
-            if(chuoiSauKhiChuyenDoi.includes(value) == true)
-            {
+            if (chuoiSauKhiChuyenDoi.includes(value) == true) {
                 careers[i].style.display = 'block';
             }
-            else
-            {
+            else {
                 careers[i].style.display = 'none';
             }
         }
-        
+
     })
-    $('#menuPhoneSearch').change(function(){
-        if($('#menuPhoneSearch').val() == '')
-        {
+    $('#menuPhoneSearch').change(function () {
+        if ($('#menuPhoneSearch').val() == '') {
             let careers = document.querySelectorAll('.career');
-            for(let x of careers)
-            {
+            for (let x of careers) {
                 x.style.display = 'block';
             }
 
@@ -2112,49 +2231,52 @@ function mobile()
 
 }
 
+function kiemTraManHinh() {
+    if (window.innerWidth >= 1024) {
+        desktop();
+    }
+    else if (window.innerWidth <= 1023) {
+        mobile();
+    }
+}
 
+function checkMoveToTop() {
+    let top = $(window).scrollTop();
+    let movetoTop = document.querySelector('.icon > div > a');
+
+    if (top > 500) {
+
+        $(movetoTop).css({
+            'display': 'block'
+        });
+    }
+    else {
+        $(movetoTop).css({
+            'display': 'none'
+        });
+    }
+}
 
 window.onload = function () {
     $('.subMenuP').hide();
 
-    if(window.innerWidth > 1024)
-    {
-        desktop();
-    }
-    else if(window.innerWidth <= 500)
-    {
-        mobile();
-    }
+    kiemTraManHinh();
+    checkMoveToTop();
 
     $(window).on('resize', function () {
-        if(window.innerWidth > 1024)
-        {
-            desktop();
-        }
-        else if(window.innerWidth <= 500)
-        {
-            mobile();
-        }
+        kiemTraChu();
+
+        kiemTraManHinh();
     });
 
-    // $(window).blur(function(){
-    //     let word = document.querySelectorAll('.word');
+    $(window).focus(function () {
+        kiemTraChu();
+        kiemTraManHinh();
+    });
 
-    //     for(let x of word)
-    //         $(x).off();
-
-    // })
-
-    // $(window).focus(function(){
-    //     if(window.innerWidth > 1024)
-    //         {
-    //             desktop();
-    //         }
-    //         else if(window.innerWidth <= 500)
-    //         {
-    //             mobile();
-    //         }
-    
-    // });
+    $(window).blur(function () {
+        kiemTraChu();
+        kiemTraManHinh();
+    });
 
 }

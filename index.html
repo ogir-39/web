@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Gcareer - Trang chủ</title>
     <link href="images/G_career.png" rel="shortcut icon"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
@@ -76,13 +76,18 @@
             <input id="menuPhoneSearch" type="text" placeholder="Nhập"/>
             <button><i class="fa-solid fa-magnifying-glass" id="clickMenuP"></i></button>
         </li>
-        <li><i class="fa-regular fa-bell"></i> Thông báo</li>
-        <li><i class="fa-solid fa-briefcase"></i><a href="#lists">Công việc</a></li>
-        <li><i class="fa-regular fa-building"></i> <a href="#topcmps">Doanh nghiệp</a></li>
+        <li class="bell"><i class="fa-regular fa-bell"></i>Thông báo</li>
+        <li><i class="fa-solid fa-briefcase"></i><a href="#jobs">Công việc</a></li>
+        <li><i class="fa-regular fa-building"></i><a href="#topcmps">Doanh nghiệp</a></li>
         <li><i class="fa-regular fa-newspaper"></i><a href="html/cv.html">Mẫu hồ sơ</a></li>
         <li><i class="fa-solid fa-user"></i><a href="html/login.html">Đăng nhập</a></li>
         <li><i class="fa-solid fa-user-plus"></i><a href="html/register.html">Đăng ký</a></li>
     </ul>
+    <div class="thongBao">
+        <img src="./images/sad_face.png">
+        <i class="fa-regular fa-circle-xmark"></i>
+        <div>Bạn chưa có thông báo</div>
+    </div>
     <section class="bigbackground">
         <p></p>
         <div class="mainsearch flex">
@@ -220,8 +225,8 @@
                 </div>
             </div>
         </div>
-        <div>
-            <h2>DANH SÁCH CÁC VIỆC LÀM ĐANG TUYỂN DỤNG</h2>
+        <div >
+            <h2 id="jobs">DANH SÁCH CÁC VIỆC LÀM ĐANG TUYỂN DỤNG</h2>
             <div class="flex">
                 <i class="fa-solid fa-filter filter" id="filter"></i>
                <div class="flex filter-menu" >

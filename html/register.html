@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../images/G_career.png" rel="shortcut icon" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="../css/register.css">
+    <link rel="stylesheet" media="screen and (max-width: 1023px)" href="../css/register_phone.css">
     <script src="../javascript/jquery-3.7.1.min.js"></script>
     <script src="../javascript/register.js" defer></script>
     <title>Gcareer - Đăng ký tài khoản</title>
 </head>
 
 <body>
-    <!-- check mk 
-        kiểm tra input 
-    -->
 
     <header>
-        <a href="../index.html"> <img src="../images/cat.png" width="12%" alt="logo-gcareer"></a>
+        <a href="../index.html"> <img src="../images/cat.png" width="" alt="logo-gcareer"></a>
     </header>
     <div class="form-container">
         <h2 >Đăng ký</h2>
@@ -74,10 +73,12 @@
                         <span><i class="fa-solid fa-eye conMat" id="eyes1"></i></span>
                     </div>
 
-                    <input type="submit" value="Đăng ký" class="btn" id="dangKy"  onclick="checkPassword()" >
+                    <a class="btn1" class="btn" id="dangKy" href="#" onclick="checkPassword()" ><input type="submit" value="Đăng ký"/></a>
                 </form>
             </div>
         </div>
+        <div class="mobileLogin">Bạn đã có tài khoản?</div>
+        <a href="./login.html">Đăng nhập</a>
     </div>
     <img src="../images/business_man.png" class="img_businessMan" id="boy" alt="business-man">
     <img src="../images/cool_boy.webp" class="img_businessMan" id="coolBoy" alt="business-cool">

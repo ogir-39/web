@@ -13,12 +13,12 @@ body {
 }
 
 /*BLOCK*/
-.preview>p{
+.preview>p,.gcareer{
     display: block;
 }
 
 /* HIDDEN */
-.head , .below, .ads, #close, .color>p{
+.head , .below, .ads, .color>p, #close{
     display: none;
 }
 
@@ -42,8 +42,8 @@ body {
 
 .logo{
     width: 30%;
-    max-width: 130px;
     align-content: center;
+    max-width: 130px;
 }
 
 /* .logo img{
@@ -171,9 +171,9 @@ body {
     padding: 2% 0;
 }
 
-.imgCV a{
-    /* z-index: 1; */
-    position: relative;
+.cv a{
+    text-decoration: none;
+    color: black;
 }
 
 .cv>div{
@@ -210,7 +210,6 @@ body {
 /* NOTE */
 .imgCV{
     overflow: hidden;
-    position: relative;
 }
 
 .tag{
@@ -228,7 +227,7 @@ body {
 }
 
 /* CHOICE */
-.imgCV .choice{
+.choice{
     position: absolute;
     width: 100%;
     left: 0;
@@ -236,7 +235,10 @@ body {
     padding-bottom: 0;
     box-sizing: border-box;
     bottom: 0;
-    z-index: 2;
+}
+
+.imgCV:hover .choice{
+    animation: none;
 }
 
 .choice button{
@@ -331,6 +333,7 @@ body {
     border-radius: 2rem;
     box-sizing: border-box;
     background-color: white;
+    min-width: auto;
 }
 
 .color>p{
@@ -496,7 +499,7 @@ footer>div:nth-child(2)>img{
 
 /*THÊMW*/
 .theme{
-    display: block !important;
+    display: block;
 }
 
 .theme{
@@ -518,7 +521,7 @@ footer>div:nth-child(2)>img{
     border-radius: 50%;
 }
 
-.theme::before{
+.theme>::before{
     width: 100%;
     height: 100%;
     display: block;
@@ -532,6 +535,51 @@ footer>div:nth-child(2)>img{
 
 .theme>i:last-child{
     color: gainsboro;
+}
+
+.thongBao
+{
+    position: fixed;
+    z-index: 2000;
+    width: 81%;
+    height: 37%;
+    text-align: center;
+    border-radius: 2rem;
+    background: rgba(173,216,230,0.75);
+    left: 10%;
+    top: 28%;
+}
+
+.thongBao img
+{
+    position: absolute;
+    width: 50%;
+    opacity: 0.3;
+    text-align: center;
+    left: 25%;
+    top: 20%;
+
+}
+.thongBao div
+{
+    position: absolute;
+    left: 6%;
+    font-weight: bold;
+    top: 43%;
+    font-size: 1.4rem;
+    text-wrap: nowrap;
+
+
+}
+
+.thongBao i
+{
+    position: absolute;
+    right: 9%;
+    top: 7%;
+    font-size: 2rem;
+
+    cursor: pointer;
 }
 
 @media (min-width: 660px) {
@@ -698,7 +746,7 @@ footer>div:nth-child(2)>img{
 }
 
 .form{
-    width: 70%;
+    width: 90%;
     border-radius: 1rem;
     margin: auto;
     margin-top: 1rem;
@@ -718,6 +766,7 @@ footer>div:nth-child(2)>img{
 .bigImg>img{
     width: 100%;
     height: max-content;
+    border-radius: 0;
 }
 
 .design{
@@ -726,7 +775,6 @@ footer>div:nth-child(2)>img{
     text-align: center;
     margin-top: 2rem;
     background-color: white;
-    height: 40%;
     margin: auto;
     border-radius: 1rem;
     display: block !important;
@@ -815,4 +863,61 @@ footer>div:nth-child(2)>img{
 .theme{
     width: 7%;
 }
+.thongBao {
+    position: fixed;
+    z-index: 2000;
+    width: 40%;
+    height: 55%;
+    text-align: center;
+    border-radius: 2rem;
+    background: rgba(173, 216, 230, 0.75);
+    left: 27%;
+    top: 28%;
+}
+
+.thongBao img {
+    position: absolute;
+    width: 44%;
+    opacity: 0.3;
+    text-align: center;
+    left: 25%;
+    top: 20%;
+}
+
+.thongBao div {
+    position: absolute;
+    left: 10%;
+    font-weight: bold;
+    top: 45%;
+    font-size: 1.4rem;
+    text-wrap: nowrap;
+}
+.theme {
+    width: 7%;
+}
+
+}
+
+.active
+{
+    display: block!important;
+    animation: thongBaoAnimate 0.5s ease-in-out;
+}
+@keyframes thongBaoAnimate {
+    from {
+        width: 0%;
+        height: 0%;
+    }
+    to {
+        width: 370px;
+        height: 230px;
+    }
+}
+
+
+@media (min-width : 896px) {
+    .color
+    {
+        padding: 7% 0.7%;
+    }
 }

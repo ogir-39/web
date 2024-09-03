@@ -360,7 +360,6 @@ header{
 .topjob{
     display: block;
     width: 20%;
-    min-width: 250px;
     max-width: 290px;
     padding: 5px;
 }
@@ -404,6 +403,12 @@ header{
     min-height: 60px;
     display: flex; 
     align-items: center;
+}
+
+#jobs
+{
+    scroll-margin-top: 3rem;
+
 }
 /* LISTs CSS */
 .lists{
@@ -711,7 +716,7 @@ header{
 }
 
 .topcmp:hover{
-    background: radial-gradient(rgba(135, 206, 250, 0.4),whitesmoke)
+    background: radial-gradient(rgba(135, 206, 250, 0.4),transparent);
 }
 
 .imgcmp{
@@ -1153,4 +1158,15 @@ footer>div:nth-child(2)>img{
 
 .moonOff{
     animation: moonOff ease-in-out 1s;
+}
+
+.thongBao
+{
+    display: none;
+}
+
+.active
+{
+    display: block!important;
+    
 }

@@ -1,34 +1,14 @@
-function thuGon() {
-    let careers = document.querySelectorAll('.career');
+let co = false; //false = bright mode
 
-    for (let i = 1; i < careers.length; i++) {
-        if (i >= 12) {
-            careers[i].style.display = 'none';
-        }
-    }
 
-}
-
-function moRong() {
-    let careers = document.querySelectorAll('.career');
-
-    for (let i = 1; i < careers.length; i++) {
-        if (i >= 12) {
-            careers[i].style.display = 'block';
-        }
-    }
-
-}
-
-window.onload = function () {
-
-    let btn = document.querySelector('#btnMoRong div');
+function desktop() {
+    $('.subMenuP').hide();
+    $('*').off();
 
     let cnt = 1;
-    thuGon();
 
-     // cuộn thanh tìm kiếm trên taskbar
-     $('#click1').on('click', function () {
+    // cuộn thanh tìm kiếm trên taskbar
+    $('#click1').on('click', function () {
 
         $(this).addClass('hidden');
         $('.search').removeClass('unexpand');
@@ -45,27 +25,163 @@ window.onload = function () {
         $('#click1').removeClass('hidden');
     });
 
-    $('#btnMoRong > div').click(function () {
-        cnt++;
-        if (cnt % 2 == 0) {
-            moRong();
-            // btn.innerHTML = "Thu gọn";
-            $('#btnMoRong div').text('Thu gọn').css({
-                'padding': '1rem 1.9rem',
-                'box-sizing': 'border-box'
-            });
-            window.scrollTo(0, 965);
+
+
+    if (co == true) {
+
+        let menu = document.querySelectorAll('.menu>li>a');
+        for (let i = 0; i < menu.length; i++) {
+            $(menu[i + 1]).on('mouseenter', function () {
+                $(this).css({
+                    'color': 'lightskyblue',
+                    'background-color': 'rgb(49,51,56)'
+                })
+            })
+            $(menu[i + 1]).on('mouseleave', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
         }
-        else {
-            thuGon();
-            // btn.innerHTML = "Xem tất cả";
-            $('#btnMoRong div').text('Xem tất cả').css({
-                'padding': '1rem',
-                'box-sizing': 'border-box'
-            });;
-            window.scrollTo(0, 465);
+        let users = document.querySelectorAll('.users>li');
+        for (let y = 0; y < users.length; y++) {
+            $(users[y]).on('mouseenter', function () {
+                $(this).css({
+                    'color': 'lightskyblue',
+                    'background-color': 'rgb(49,51,56)'
+                })
+            })
+            $(users[y]).on('mouseleave', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
         }
-    });
+        $('.choice>a:last-child>p').css('color', '');
+        $('.bigbackground>p').css('color', 'black');
+        $('.info p').css('color', 'white');
+
+        $('.salary').css('color', 'orangered');
+        $('.salary > p').css('color', 'orangered');
+        $('.career .salary').css({
+            'color': 'lightskyblue'
+        })
+        $('.topcmp>div').css({
+            'background-color': 'rgb(49,51,56)',
+            'color': 'white'
+        })
+
+        $('.below').css({
+            'background-color': '#292a2d',
+            'color': 'white'
+        })
+        $('.career div').css({
+            'background-color': 'rgb(49,51,56)',
+            'color': 'white'
+        })
+        $('.career .salary').css({
+            'color': 'lightskyblue'
+        })
+        $('.career .location').css({
+            'color': 'gray'
+        })
+        $('.detail>p').css('color', 'white');
+
+
+        $('.below p').css({
+            'color': 'white'
+        })
+
+        $('.below h2').css('color', 'white');
+        $('.career div').css({
+            'background-color': 'rgb(49,51,56)',
+            'color': 'white'
+        })
+        $('.career .salary').css({
+            'color': 'lightskyblue'
+        })
+        $('.career .location').css({
+            'color': 'gray'
+        })
+
+    }
+    else{
+        $('.topcmps').css('background-color', '');
+
+
+        let menu = document.querySelectorAll('.menu>li>a');
+        for (let i = 0; i < menu.length; i++) {
+            $(menu[i + 1]).on('mouseenter', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+            $(menu[i + 1]).on('mouseleave', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+        }
+        let users = document.querySelectorAll('.users>li');
+        for (let y = 0; y < users.length; y++) {
+            $(users[y]).on('mouseenter', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+            $(users[y]).on('mouseleave', function () {
+                $(this).css({
+                    'color': '',
+                    'background-color': ''
+                })
+            })
+        }
+        $('.choice>a:last-child>p').css('color', '');
+        $('.bigbackground>p').css('color', '');
+        $('.info p').css('color', '');
+
+        $('.salary').css({
+            'color': ''
+        })
+        $('.salary > p').css('color', '');
+
+        $('.career .salary').css({
+            'color': ''
+        })
+
+        $('.career .location').css({
+            'color': ''
+        })
+
+        $('.topcmp>div').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.below').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.career div').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.topcmp p').css('color', '');
+        $('.detail>p').css('color', '');
+
+        $('.below p').css({
+            'color': 'black'
+        })
+
+        $('.below h2').css('color', 'black');
+    }
 
 
 
@@ -74,12 +190,11 @@ window.onload = function () {
         var footer = document.querySelector('.footer');
         let maxHeight = document.body.offsetHeight;
 
-        // console.log(maxHeight);
-        let footerCal = maxHeight - footer.offsetHeight -300;
+        let footerCal = maxHeight - footer.offsetHeight - 300;
         let max = footerCal - 250 + 30;
-      
 
-    
+
+
         if (top >= 0 && top < max) {
 
 
@@ -128,15 +243,15 @@ window.onload = function () {
                 }
             }
 
-        } else  {
+        } else {
             let quangCao = document.querySelectorAll('.ads a');
-            
+
             for (let x of quangCao) {
-                
+
                 // Cố định vị trí hiện tại của phần tử
                 $(x).css({
                     'position': 'absolute',
-                    'top': `${footerCal-88}px` // Giữ nguyên vị trí hiện tại
+                    'top': `${footerCal - 88}px` // Giữ nguyên vị trí hiện tại
                 });
             }
 
@@ -163,10 +278,7 @@ window.onload = function () {
 
         $('.search button').click(function () {
 
-            window.scrollTo(0, 465);
 
-
-            console.log(value);
 
 
             for (let x = 0; x < name.length; x++) {
@@ -176,7 +288,6 @@ window.onload = function () {
                     careers[x].style.display = '';
                 }
                 else {
-                    // console.log(name[x].innerHTML.toLowerCase());
                     careers[x].style.display = 'none';
                 }
             }
@@ -186,152 +297,42 @@ window.onload = function () {
 
     });
 
-    $('#mainSearch').change(function () {
-        let value = $('#mainSearch').val().toLowerCase();
-        let area = $('#area').val().toLowerCase();
-        let careers = document.querySelectorAll('.career');
-
-        if (value == '') {
-            for (let x of careers) {
-                x.style.display = 'block';
-            }
-        }
 
 
-        $('.mainsearch button').click(function () {
-
-            window.scrollTo(0, 465);
-
-            let name = document.querySelectorAll('div.detail > p.name');
-            let location = document.querySelectorAll('div.detail > div > p.location');
-
-            for (let i = 0; i < name.length; i++) {
-                if (area == 'all') {
-                    if (name[i].innerHTML.toLowerCase().includes(value) == true) {
-                        careers[i].style.display = '';
-                    }
-                    else {
-                        careers[i].style.display = 'none';
-                    }
-                }
-                else {
-                    if (name[i].innerHTML.toLowerCase().includes(value) == true
-                        && location[i].innerHTML.toLowerCase().includes(area) == true) {
-                        careers[i].style.display = '';
-                    }
-                    else {
-                        careers[i].style.display = 'none';
-                    }
-                }
-
-            }
-        });
-    });
-
-
-    // javascript cho hover career
-
-    let congviec = document.querySelectorAll('.career');
-    let congviecdetail = document.querySelectorAll('.career_detail');
-    let name = document.querySelectorAll('.name');
-
-    // chỉnh css cho các vị trí đặt biệt
-    for (let i = 1; i <= congviec.length; i += 3) {
-        $(congviecdetail[i]).css('left', '10%');
-    }
-
-
-    for (let x = 0; x < congviec.length; x++) {
-        congviec[x].addEventListener('mouseenter', function () {
-            $(`#career${x + 1}`).css({
-                'display': 'block'
-            })
-        });
-
-       
-        for (let y = 0; y < congviecdetail.length; y++) 
-        {
-            congviecdetail[y].addEventListener('mouseenter', function () 
-            {
-               
-                for (let z = 0; z <= congviecdetail.length; z++) 
-                {
-                    if (z != x + 1) 
-                    {
-                        $(`#career${z}`).css({
-                            'display': 'none'
-                        })
-                    }
-                    
-
-                }
-
-             // hiện thẻ đang được hover
-                $(`#career${x + 1}`).css({
-                    'display': 'block'
-                })
-
-                // congviecdetail[y].addEventListener('mouseleave', function () {
-                //     console.log('leave');
-                //     $(`#career${x + 1}`).css({
-                //         'display': 'none'
-                //     })
-    
-                //     $(name[x]).css({
-                //         'color': 'initial'
-                //     })
-                // });
-            });
-
-        }
-        // congviec[x].addEventListener('mouseout', function () {
-        //     $(`#career${x + 1}`).css({
-        //         'display': 'none'
-        //     })
-
-        //     $(name[x]).css({
-        //         'color': 'initial'
-        //     })
-        // });
-    }
 
     // DARK MODE
-    let co=false; //false = bright mode
+    //let co = false; //false = bright mode
     //chỉnh từ dark mode sang brigth mode
     $('#sun').click(function () {
-        if (co==true)
-        {
+        if (co == true) {
             $('#sun').css({
-                'color':'gold',
-                'border':'3px solid gold'
+                'color': 'gold',
+                'border': '3px solid gold'
             })
             $('#moon').css({
-                'color':'gainsboro',
-                'box-shadow':'0 0 0 0 transparent',
+                'color': 'gainsboro',
+                'box-shadow': '0 0 0 0 transparent',
             })
             $('body').css({
-                'background-color':'white'
+                'background-color': 'white'
             })
             $('header').css({
-                'background-color':'',
-                'color':''
+                'background-color': '',
+                'color': ''
             })
             $('.menu>li:hover>a').css({
-                'background-color':'',
-                'color':''
+                'background-color': '',
+                'color': ''
             })
             let menu = document.querySelectorAll('.menu>li>a');
-            for (let i=0;i<menu.length;i++) 
-            {
-                $(menu[i+1]).on('mouseenter',function(){
-                    console.log($('.menu>li>a'));
+            for (let i = 0; i < menu.length; i++) {
+                $(menu[i + 1]).on('mouseenter', function () {
                     $(this).css({
                         'color': '',
                         'background-color': ''
                     })
                 })
-                $(menu[i+1]).on('mouseleave',function(){
-                    console.log($('.menu>li>a'));
+                $(menu[i + 1]).on('mouseleave', function () {
                     $(this).css({
                         'color': '',
                         'background-color': ''
@@ -339,18 +340,17 @@ window.onload = function () {
                 })
             }
             $('.search>input').css({
-                'color':''
+                'color': ''
             })
             let users = document.querySelectorAll('.users>li');
-            for (let y=0;y<users.length;y++) 
-            {
-                $(users[y]).on('mouseenter',function(){
+            for (let y = 0; y < users.length; y++) {
+                $(users[y]).on('mouseenter', function () {
                     $(this).css({
                         'color': '',
                         'background-color': ''
                     })
                 })
-                $(users[y]).on('mouseleave',function(){
+                $(users[y]).on('mouseleave', function () {
                     $(this).css({
                         'color': '',
                         'background-color': ''
@@ -358,118 +358,124 @@ window.onload = function () {
                 })
             }
             $('.bigbackground>p').css({
-                'color':''
+                'color': ''
             })
             $('.main').css({
-                'background-color':''
+                'background-color': ''
             })
             $('.info>div').css({
-                'background-color':'',
-                'color':''
+                'background-color': '',
+                'color': ''
             })
             $('.info>div:first-child i').css({
-                'color':''
+                'color': ''
             })
             $('.info>div:last-child i').css({
-                'color':''
+                'color': ''
             })
             $('.lienhe').css({
-                'background-color':'',
-                'color':''
+                'background-color': '',
+                'color': ''
             })
             $('.lienhe a').css({
-                'color':''
+                'color': ''
             })
             $('.salary').css({
-                'color':''
+                'color': ''
             })
+            $('.salary > p').css({
+                'color': ''
+            })
+            $('.info p').css({'color':''});
             $('.details').css({
-                'background-color':'',
-                'color':''
+                'background-color': '',
+                'color': ''
             })
             $('.below').css({
-                'background-color':'',
-                'color':''
+                'background-color': '',
+                'color': ''
             })
             $('.career div').css({
-                'background-color':'',
-                'color':''
+                'background-color': '',
+                'color': ''
             })
-            let cv=document.querySelectorAll('.career');
-            for (let x=0;x<cv.length;x++){
-                $(cv[x]).on('mouseenter',function(){
+            let cv = document.querySelectorAll('.career');
+            for (let x = 0; x < cv.length; x++) {
+                $(cv[x]).on('mouseenter', function () {
                     $(this).css({
-                        'background':'',
-                        'border-color':''
+                        'background': '',
+                        'border-color': ''
                     })
                 })
-                $(cv[x]).on('mouseleave',function(){
+                $(cv[x]).on('mouseleave', function () {
                     $(this).css({
-                        'background':''
+                        'background': ''
                     })
                 })
             }
-            let topcmp=document.querySelectorAll('.topcmp');
-            for (let x=0;x<topcmp.length;x++){
-                $(topcmp[x]).on('mouseenter',function(){
+            let topcmp = document.querySelectorAll('.topcmp');
+            for (let x = 0; x < topcmp.length; x++) {
+                $(topcmp[x]).on('mouseenter', function () {
                     $(this).css({
-                        'background':''
+                        'background': ''
                     })
                 })
-                $(topcmp[x]).on('mouseleave',function(){
+                $(topcmp[x]).on('mouseleave', function () {
                     $(this).css({
-                        'background':''
+                        'background': ''
                     })
                 })
             }
             $('.topcmp>div').css({
-                'background-color':'',
-                'color':''
+                'background-color': '',
+                'color': ''
             })
             $('footer').css({
-                'background':''
+                'background': ''
             })
             $('footer h2').css({
-                'color':''
+                'color': ''
             })
             $('footer p').css({
-                'color':''
+                'color': ''
             })
-            co=false;
+
+            $('.below p').css({
+                'color': ''
+            })
+    
+            $('.below h2').css('color', '');
+            co = false;
         }
     });
     //chuyển từ bright mode sang dark mode
     $('#moon').click(function () {
-        if (co==false)
-        {
+        if (co == false) {
             $(this).removeClass('moonOn moonOff').addClass('moonOn');
             $('#sun').css({
-                'color':'gray',
-                'border':'0'
+                'color': 'gray',
+                'border': '0'
             })
             $('body').css({
-                'background-color':'#202124'
+                'background-color': '#202124'
             })
             $('header').css({
-                'background-color':'#292a2d',
-                'color':'white !important'
+                'background-color': '#292a2d',
+                'color': 'white !important'
             })
             $('.menu>li:hover>a').css({
-                'background-color':'#292a2d',
-                'color':'white !important'
+                'background-color': '#292a2d',
+                'color': 'white !important'
             })
             let menu = document.querySelectorAll('.menu>li>a');
-            for (let i=0;i<menu.length;i++) 
-            {
-                $(menu[i+1]).on('mouseenter',function(){
-                    console.log($('.menu>li>a'));
+            for (let i = 0; i < menu.length; i++) {
+                $(menu[i + 1]).on('mouseenter', function () {
                     $(this).css({
                         'color': 'lightskyblue',
                         'background-color': 'rgb(49,51,56)'
                     })
                 })
-                $(menu[i+1]).on('mouseleave',function(){
-                    console.log($('.menu>li>a'));
+                $(menu[i + 1]).on('mouseleave', function () {
                     $(this).css({
                         'color': '',
                         'background-color': ''
@@ -477,18 +483,17 @@ window.onload = function () {
                 })
             }
             $('.search>input').css({
-                'color':'whitesmoke'
+                'color': 'whitesmoke'
             })
             let users = document.querySelectorAll('.users>li');
-            for (let y=0;y<users.length;y++) 
-            {
-                $(users[y]).on('mouseenter',function(){
+            for (let y = 0; y < users.length; y++) {
+                $(users[y]).on('mouseenter', function () {
                     $(this).css({
                         'color': 'lightskyblue',
                         'background-color': 'rgb(49,51,56)'
                     })
                 })
-                $(users[y]).on('mouseleave',function(){
+                $(users[y]).on('mouseleave', function () {
                     $(this).css({
                         'color': '',
                         'background-color': ''
@@ -496,133 +501,137 @@ window.onload = function () {
                 })
             }
             $('.bigbackground>p').css({
-                'color':'black'
+                'color': 'black'
             })
             $('.main').css({
-                'background-color':'#292a2d'
+                'background-color': '#292a2d'
             })
             $('.info>div').css({
-                'background-color':'rgb(49,51,56)',
-                'color':'white'
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
             })
             $('.info>div:first-child i').css({
-                'color':'black'
+                'color': 'black'
             })
             $('.info>div:last-child i').css({
-                'color':'#97bdd4'
+                'color': '#97bdd4'
             })
             $('.lienhe').css({
-                'background-color':'rgb(49,51,56)',
-                'color':'white'
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
             })
             $('.lienhe a').css({
-                'color':'white'
+                'color': 'white'
             })
             $('.salary').css({
-                'color':'red'
+                'color': 'orangered'
             })
+
             $('.details').css({
-                'background-color':'rgb(49,51,56)',
-                'color':'white'
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
             })
             $('.below').css({
-                'background-color':'#292a2d',
-                'color':'white'
+                'background-color': '#292a2d',
+                
+            })
+            $('.below p,h2').css({
+                'color': 'white'
             })
             $('.career div').css({
-                'background-color':'rgb(49,51,56)',
-                'color':'white'
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
             })
             $('.career .salary').css({
-                'color':'lightskyblue'
+                'color': 'lightskyblue'
             })
-            let cv=document.querySelectorAll('.career');
-            for (let x=0;x<cv.length;x++){
-                $(cv[x]).on('mouseenter',function(){
-                    $(this).css({
-                        'background':'radial-gradient(rgba(135, 206, 250, 0.4),#292a2d)',
-                        'border-color':'lightskyblue'
-                    })
-                })
-                $(cv[x]).on('mouseleave',function(){
-                    $(this).css({
-                        'background':'initial'
-                    })
-                })
-            }
-            let topcmp=document.querySelectorAll('.topcmp');
-            for (let x=0;x<topcmp.length;x++){
-                $(topcmp[x]).on('mouseenter',function(){
-                    $(this).css({
-                        'background':'radial-gradient(rgba(135, 206, 250, 0.4),#292a2d)'
-                    })
-                })
-                $(topcmp[x]).on('mouseleave',function(){
-                    $(this).css({
-                        'background':'initial'
-                    })
-                })
-            }
+            // let cv = document.querySelectorAll('.career');
+            // for (let x = 0; x < cv.length; x++) {
+            //     $(cv[x]).on('mouseenter', function () {
+            //         $(this).css({
+            //             'background': 'radial-gradient(rgba(135, 206, 250, 0.4),#292a2d)',
+            //             'border-color': 'lightskyblue'
+            //         })
+            //     })
+            //     $(cv[x]).on('mouseleave', function () {
+            //         $(this).css({
+            //             'background': 'initial'
+            //         })
+            //     })
+            // }
+            // let topcmp = document.querySelectorAll('.topcmp');
+            // for (let x = 0; x < topcmp.length; x++) {
+            //     $(topcmp[x]).on('mouseenter', function () {
+            //         $(this).css({
+            //             'background': 'radial-gradient(rgba(135, 206, 250, 0.4),#292a2d)'
+            //         })
+            //     })
+            //     $(topcmp[x]).on('mouseleave', function () {
+            //         $(this).css({
+            //             'background': 'initial'
+            //         })
+            //     })
+            // }
             $('.topcmp>div').css({
-                'background-color':'rgb(49,51,56)',
-                'color':'white'
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
             })
             $('footer').css({
-                'background':'#202124'
+                'background': '#202124'
             })
             $('footer h2').css({
-                'color':'lightskyblue'
+                'color': 'lightskyblue'
             })
             $('footer p').css({
-                'color':'white'
+                'color': 'white'
             })
-            co=true;
+            co = true;
         }
     });
 
     // HOVER DARK MODE BUTTONS
-    $('#moon').on('mouseenter',function() {
-        if (co==false) { //bright mode
-            $('#sun').removeClass('haoquang').addClass('sunOff').on('animationend',function() {
+    $('#moon').on('mouseenter', function () {
+        if (co == false) { //bright mode
+            $('#sun').removeClass('haoquang').addClass('sunOff').on('animationend', function () {
                 $('#sun').css({
-                    'color':'gainsboro',
-                    'border':'0'
+                    'color': 'gainsboro',
+                    'border': '0'
                 })
             })
             $('#moon').removeClass('moonOff').addClass('moonOn');
         }
     })
-    $('#moon').on('mouseleave',function() {
-        if (co==false) //bright mode
+    $('#moon').on('mouseleave', function () {
+        if (co == false) //bright mode
         {
             $('#sun').removeClass('sunOff').addClass('haoquang');
             $('#sun').css({
-                'color':'gold',
-                'border':'3px solid gold',
+                'color': 'gold',
+                'border': '3px solid gold',
                 'box-shadow': '0 0 0 0'
-            })
-        $('#moon').removeClass('moonOn').addClass('moonOff');
-        }
-    })
-    $('#sun').on('mouseenter',function() {
-        if (co==true) { //dark mode
-            $('#sun').removeClass('sunOff').addClass('haoquang');
-            $('#sun').css({
-                'color':'gold',
-                'border':'3px solid gold'
             })
             $('#moon').removeClass('moonOn').addClass('moonOff');
         }
     })
-    $('#sun').on('mouseleave',function() {
-        if (co==true) //dark mode
+    $('#sun').on('mouseenter', function () {
+        if (co == true) { //dark mode
+            $('#sun').removeClass('sunOff').addClass('haoquang');
+            $('#sun').css({
+                'color': 'gold',
+                'border': '3px solid gold'
+            })
+            $('#moon').removeClass('moonOn').addClass('moonOff');
+        }
+    })
+    $('#sun').on('mouseleave', function () {
+        if (co == true) //dark mode
         {
             $('#sun').removeClass('haoquang').addClass('sunOff');
             $('#sun').css({
-                'color':'',
-                'border':'0',
+                'color': 'gainsboro',
+                'border': '0',
             })
-        $('#moon').removeClass('moonOff').addClass('moonOn');
+            $('#moon').removeClass('moonOff').addClass('moonOn');
         }
     })
 
@@ -633,14 +642,13 @@ window.onload = function () {
         var footer = document.querySelector('.footer');
         let maxHeight = document.body.offsetHeight;
 
-        // console.log(maxHeight);
-        let footerCal = maxHeight - footer.offsetHeight -300;
+        let footerCal = maxHeight - footer.offsetHeight - 300;
         let max = footerCal - 250 + 30;
-      
 
-    
+
+
         if (top >= 0 && top < max) {
-            
+
 
             if (top > 0 && top <= footerCal) {
                 if (top > 300) {
@@ -649,8 +657,7 @@ window.onload = function () {
                         'display': 'block'
                     });
                 }
-                else
-                {
+                else {
                     let movetoTop = document.querySelector('.icon > div > a');
                     $(movetoTop).css({
                         'display': 'none'
@@ -694,15 +701,295 @@ window.onload = function () {
                 }
             }
 
-        } else  {
+        } else {
             let quangCao = document.querySelectorAll('.ads a');
-            
+
             for (let x of quangCao) {
-                
+
                 // Cố định vị trí hiện tại của phần tử
                 $(x).css({
                     'position': 'absolute',
-                    'top': `${footerCal-88}px` // Giữ nguyên vị trí hiện tại
+                    'top': `${footerCal - 88}px` // Giữ nguyên vị trí hiện tại
+                });
+            }
+        }
+    });
+
+
+
+}
+
+function khoiTaoTab(flag) {
+    $('#details').addClass('active1');
+    let tab = document.querySelector('.tab>li');
+    if (flag == false) {
+        $(tab).addClass('changeColorBright');
+        $(tab).children('a').css('color', 'black');
+    }
+    else {
+        $(tab).addClass('changeColorDark');
+        $(tab).children('a').css('color', 'lightskyblue');
+    }
+}
+
+let flagTab = false;
+
+function mobile() {
+
+    $('*').off();
+
+
+    $('.subMenuP').hide();
+
+
+    if (flagTab == false) {
+        khoiTaoTab(co);
+        flagTab = true;
+    }
+
+
+    if (co == true) {
+
+        $('.main_p .info h1').css('color', 'white');
+        $('.subMenuP>li>input').css('color', 'white');
+        $('.subMenuP>li>button > i').css('color', 'white');
+        $('.subMenuP>li>a').css('color', 'white');
+        $('.subMenuP>li').css('color', 'white');
+        $('.subMenuP').css('background-color', '#292a2d');
+        $('.phone').css('background-color', '#292a2d');
+       
+
+        $('.bigbackground>p').css('color', 'black');
+
+        $('.salary').css({
+            'color': 'white',
+            'background-color': 'transparent'
+        })
+
+        $('.salary > p').css({
+            'color': 'lightskyblue'
+        })
+        $('.main_p .info>div').css('background-color', 'transparent');
+        $('.below h2').css('color', 'white');
+
+      
+        $('.choice>a:last-child>p').css('color', '');
+        $('.bigbackground>p').css('color', 'black');
+        $('.info p').css('color', 'white');
+
+        $('.salary').css('color', 'lightskyblue');
+        $('.salary > p').css('color', 'lightskyblue');
+        $('.career .salary').css({
+            'color': 'lightskyblue'
+        })
+        $('.topcmp>div').css({
+            'background-color': 'rgb(49,51,56)',
+            'color': 'white'
+        })
+
+        $('.below').css({
+            'background-color': '#292a2d',
+            'color': 'white'
+        })
+        $('.career div').css({
+            'background-color': 'rgb(49,51,56)',
+            'color': 'white'
+        })
+        $('.career .salary').css({
+            'color': 'lightskyblue'
+        })
+        $('.career .location').css({
+            'color': 'gray'
+        })
+        $('.detail>p').css('color', 'white');
+
+
+        $('.below p').css({
+            'color': 'white'
+        })
+
+        $('.below h2').css('color', 'white');
+        $('.career div').css({
+            'background-color': 'rgb(49,51,56)',
+            'color': 'white'
+        })
+        $('.career .salary').css({
+            'color': 'lightskyblue'
+        })
+        $('.career .location').css({
+            'color': 'gray'
+        })
+
+    }
+    else {
+        $('.main_p .info h1').css('color', '');
+
+        $('.topcmps').css('background-color', '');
+        $('.underline').css('background', '');
+        $('.subMenuP>li>input').css('color', '');
+        $('.subMenuP>li>button > i').css('color', '');
+        $('.subMenuP>li>a').css('color', '');
+        $('.subMenuP>li').css('color', '');
+        $('.subMenuP').css('background-color', '');
+        $('.phone').css('background-color', '');
+        $('.topjobs_p').css('background-color', '');
+        $('.topjobs_p .topjob>div').css('background-color', '');
+        $('.imgjob + div,p').css('color', '');
+        $('.word').css('color', '');
+        $('.words').css('color', '');
+        $('.choice>a:last-child>p').css('color', '');
+        $('.bigbackground>p').css('color', '');
+        $('.salary').css({
+            'color': ''
+        })
+
+        $('.topcmp>div').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.below').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.career div').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.topcmp p').css('color', '');
+        $('.detail>p').css('color', '');
+        $('.below h2').css('color', '');
+
+        $('.topcmps').css('background-color', '');
+        
+        $('.choice>a:last-child>p').css('color', '');
+        $('.bigbackground>p').css('color', '');
+        $('.info p').css('color', '');
+
+        $('.salary').css({
+            'color': ''
+        })
+        $('.salary > p').css('color', '');
+
+        $('.career .salary').css({
+            'color': ''
+        })
+
+        $('.career .location').css({
+            'color': ''
+        })
+
+        $('.topcmp>div').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.below').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.career div').css({
+            'background-color': '',
+            'color': ''
+        })
+
+        $('.topcmp p').css('color', '');
+        $('.detail>p').css('color', '');
+
+        $('.below p').css({
+            'color': 'black'
+        })
+
+        $('.below h2').css('color', 'black');
+
+    }
+
+    let bell = document.querySelector('.bell');
+
+    bell.addEventListener('click', function () {
+
+        $('.thongBao').addClass("active");
+    });
+
+    $('.thongBao i').on('click', function () {
+
+        $('.thongBao').removeClass("active");
+    });
+
+    let cnt = 1;
+
+    // cuộn thanh tìm kiếm trên taskbar
+
+    $(window).scroll(function () {
+        let top = $(window).scrollTop();
+        var footer = document.querySelector('.footer');
+        let maxHeight = document.body.offsetHeight;
+
+        let footerCal = maxHeight - footer.offsetHeight - 300;
+        let max = footerCal - 250 + 30;
+
+
+
+        if (top >= 0 && top < max) {
+
+
+            if (top > 200 && top <= footerCal) {
+                if (top > 500) {
+                    let movetoTop = document.querySelector('.icon > div > a');
+                    $(movetoTop).css({
+                        'display': 'block'
+                    });
+                }
+
+                let quangCao = document.querySelectorAll('.ads a');
+
+                for (let x of quangCao) {
+                    $(x).css({
+                        'width': '12%',
+                        'height': '50%',
+                        'padding': '1rem',
+                        'margin-top': '1rem',
+                        'border-radius': '1rem',
+                        'position': 'fixed',
+                        'top': '20%'
+                    });
+                }
+            } else if (top <= 400) {
+                if (top > 300) {
+                    let movetoTop = document.querySelector('.icon > div > a');
+                    $(movetoTop).css({
+                        'display': 'none'
+                    });
+                }
+
+                let quangCao = document.querySelectorAll('.ads a');
+
+                for (let x of quangCao) {
+                    $(x).css({
+                        'width': '12%',
+                        'height': '50%',
+
+                        'padding': '1rem',
+                        'margin-top': '1rem',
+                        'border-radius': '1rem',
+                        'position': 'absolute',
+                        'top': '20%'
+                    });
+                }
+            }
+
+        } else {
+            let quangCao = document.querySelectorAll('.ads a');
+
+            for (let x of quangCao) {
+
+                // Cố định vị trí hiện tại của phần tử
+                $(x).css({
+                    'position': 'absolute',
+                    'top': `${footerCal - 88}px` // Giữ nguyên vị trí hiện tại
                 });
             }
 
@@ -710,4 +997,551 @@ window.onload = function () {
 
 
     });
+
+
+    // DARK MODE
+
+    //chỉnh từ dark mode sang brigth mode
+    $('#sun').click(function () {
+        if (co == true) {
+
+            let tabs = document.querySelectorAll('.tab>li');
+
+            for (let x = 0; x < tabs.length; x++) {
+                if (tabs[x].classList.contains('changeColorBright')) {
+                    $('.changeColorBright a').css('color', 'black');
+                }
+
+                else if (tabs[x].classList.contains('changeColorDark') == true) {
+                    $('.changeColorDark a').css('color', 'black');
+
+                }
+
+
+            }
+            $('.below h2').css('color', '');
+
+            $('.main_p .info h1').css('color', '');
+            $('.topcmps').css('background-color', '');
+            $('.underline').css('background', '');
+            $('.subMenuP>li>input').css('color', '');
+            $('.subMenuP>li>button > i').css('color', '');
+            $('.subMenuP>li>a').css('color', '');
+            $('.subMenuP>li').css('color', '');
+            $('.subMenuP').css('background-color', '');
+            $('.phone').css('background-color', '');
+            $('.topjobs_p').css('background-color', '');
+            $('.topjobs_p .topjob>div').css('background-color', '');
+            $('.imgjob + div,p').css('color', '');
+            $('#sun').css({
+                'color': 'gold',
+                'border': '3px solid gold'
+            })
+            $('#moon').css({
+                'color': 'gainsboro',
+                'box-shadow': '0 0 0 0 transparent',
+            })
+            $('body').css({
+                'background-color': 'white'
+            })
+            $('header').css({
+                'background-color': '',
+                'color': ''
+            })
+            $('.menu>li:hover>a').css({
+                'background-color': '',
+                'color': ''
+            })
+            let menu = document.querySelectorAll('.menu>li>a');
+            for (let i = 0; i < menu.length; i++) {
+                $(menu[i + 1]).on('mouseenter', function () {
+                    $(this).css({
+                        'color': '',
+                        'background-color': ''
+                    })
+                })
+                $(menu[i + 1]).on('mouseleave', function () {
+                    $(this).css({
+                        'color': '',
+                        'background-color': ''
+                    })
+                })
+            }
+            $('.search>input').css({
+                'color': ''
+            })
+            let users = document.querySelectorAll('.users>li');
+            for (let y = 0; y < users.length; y++) {
+                $(users[y]).on('mouseenter', function () {
+                    $(this).css({
+                        'color': '',
+                        'background-color': ''
+                    })
+                })
+                $(users[y]).on('mouseleave', function () {
+                    $(this).css({
+                        'color': '',
+                        'background-color': ''
+                    })
+                })
+            }
+            $('.bigbackground>p').css({
+                'color': ''
+            })
+            $('.main').css({
+                'background-color': ''
+            })
+            $('.info>div').css({
+                'background-color': '',
+                'color': ''
+            })
+            $('.info>div:first-child i').css({
+                'color': ''
+            })
+            $('.info>div:last-child i').css({
+                'color': ''
+            })
+            $('.lienhe').css({
+                'background-color': '',
+                'color': ''
+            })
+            $('.lienhe a').css({
+                'color': ''
+            })
+            $('.salary').css({
+                'color': ''
+            })
+            $('.details').css({
+                'background-color': '',
+                'color': ''
+            })
+            $('.below').css({
+                'background-color': '',
+                'color': ''
+            })
+            $('.career div').css({
+                'background-color': '',
+                'color': ''
+            })
+            let cv = document.querySelectorAll('.career');
+            for (let x = 0; x < cv.length; x++) {
+                $(cv[x]).on('mouseenter', function () {
+                    $(this).css({
+                        'background': '',
+                        'border-color': ''
+                    })
+                })
+                $(cv[x]).on('mouseleave', function () {
+                    $(this).css({
+                        'background': ''
+                    })
+                })
+            }
+            let topcmp = document.querySelectorAll('.topcmp');
+            for (let x = 0; x < topcmp.length; x++) {
+                $(topcmp[x]).on('mouseenter', function () {
+                    $(this).css({
+                        'background': ''
+                    })
+                })
+                $(topcmp[x]).on('mouseleave', function () {
+                    $(this).css({
+                        'background': ''
+                    })
+                })
+            }
+            $('.topcmp>div').css({
+                'background-color': '',
+                'color': ''
+            })
+            $('footer').css({
+                'background': ''
+            })
+            $('footer h2').css({
+                'color': ''
+            })
+            $('footer p').css({
+                'color': ''
+            })
+            co = false;
+        }
+    });
+    //chuyển từ bright mode sang dark mode
+    $('#moon').click(function () {
+        if (co == false) {
+
+            let tabs = document.querySelectorAll('.tab>li');
+
+            for (let x = 0; x < tabs.length; x++) {
+                if (tabs[x].classList.contains('changeColorBright')) {
+                    $('.changeColorBright a').css('color', 'lightskyblue');
+                }
+
+                else if (tabs[x].classList.contains('changeColorDark') == true) {
+                    $('.changeColorDark a').css('color', 'lightskyblue');
+
+                }
+
+
+            }
+
+
+
+            $('.main_p .info h1').css('color', 'white');
+            $('.underline').css('background', 'white');
+            $('.subMenuP>li>input').css('color', 'white');
+            $('.subMenuP>li>button > i').css('color', 'white');
+            $('.subMenuP>li>a').css('color', 'white');
+            $('.subMenuP>li').css('color', 'white');
+            $('.subMenuP').css('background-color', '#292a2d');
+            $('.phone').css('background-color', '#292a2d');
+            $('.topjobs_p').css('background-color', '#202124');
+            $('.topjobs_p .topjob>div').css('background-color', 'rgba(0, 0, 0, 0.28)');
+            $('.imgjob + div,p').css('color', 'white');
+            $(this).removeClass('moonOn moonOff').addClass('moonOn');
+            $('#sun').css({
+                'color': 'gray',
+                'border': '0'
+            })
+            $('body').css({
+                'background-color': '#202124'
+            })
+            $('header').css({
+                'background-color': '#292a2d',
+                'color': 'white !important'
+            })
+            $('.menu>li:hover>a').css({
+                'background-color': '#292a2d',
+                'color': 'white !important'
+            })
+            let menu = document.querySelectorAll('.menu>li>a');
+            for (let i = 0; i < menu.length; i++) {
+                $(menu[i + 1]).on('mouseenter', function () {
+                    $(this).css({
+                        'color': 'lightskyblue',
+                        'background-color': 'rgb(49,51,56)'
+                    })
+                })
+                $(menu[i + 1]).on('mouseleave', function () {
+                    $(this).css({
+                        'color': '',
+                        'background-color': ''
+                    })
+                })
+            }
+            $('.search>input').css({
+                'color': 'whitesmoke'
+            })
+            let users = document.querySelectorAll('.users>li');
+            for (let y = 0; y < users.length; y++) {
+                $(users[y]).on('mouseenter', function () {
+                    $(this).css({
+                        'color': 'lightskyblue',
+                        'background-color': 'rgb(49,51,56)'
+                    })
+                })
+                $(users[y]).on('mouseleave', function () {
+                    $(this).css({
+                        'color': '',
+                        'background-color': ''
+                    })
+                })
+            }
+            $('.bigbackground>p').css({
+                'color': 'black'
+            })
+            $('.main').css({
+                'background-color': '#292a2d'
+            })
+            $('.info>div').css({
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
+            })
+            $('.info>div:first-child i').css({
+                'color': 'black'
+            })
+            $('.info>div:last-child i').css({
+                'color': '#97bdd4'
+            })
+            $('.lienhe').css({
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
+            })
+            $('.lienhe a').css({
+                'color': 'white'
+            })
+            $('.salary').css({
+                'color': 'white',
+                'background-color': 'transparent'
+            })
+
+            $('.salary > p').css({
+                'color': 'lightskyblue'
+            })
+            $('.location').css({
+                'background-color': 'transparent'
+            });
+            $('.details').css({
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
+            })
+            $('.below').css({
+                'background-color': '#292a2d',
+                'color': 'white'
+            })
+            $('.career div').css({
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
+            })
+            $('.career .salary').css({
+                'color': 'lightskyblue'
+            })
+            // let cv = document.querySelectorAll('.career');
+            // for (let x = 0; x < cv.length; x++) {
+            //     $(cv[x]).on('mouseenter', function () {
+            //         $(this).css({
+            //             'background': 'radial-gradient(rgba(135, 206, 250, 0.4),#292a2d)',
+            //             'border-color': 'lightskyblue'
+            //         })
+            //     })
+            //     $(cv[x]).on('mouseleave', function () {
+            //         $(this).css({
+            //             'background': 'initial'
+            //         })
+            //     })
+            // }
+            // let topcmp = document.querySelectorAll('.topcmp');
+            // for (let x = 0; x < topcmp.length; x++) {
+            //     $(topcmp[x]).on('mouseenter', function () {
+            //         $(this).css({
+            //             'background': 'radial-gradient(rgba(135, 206, 250, 0.4),#292a2d)'
+            //         })
+            //     })
+            //     $(topcmp[x]).on('mouseleave', function () {
+            //         $(this).css({
+            //             'background': 'initial'
+            //         })
+            //     })
+            // }
+            $('.topcmp>div').css({
+                'background-color': 'rgb(49,51,56)',
+                'color': 'white'
+            })
+
+            $('.below h2').css('color', 'white');
+
+
+            $('footer').css({
+                'background': '#202124'
+            })
+            $('footer h2').css({
+                'color': 'lightskyblue'
+            })
+            $('footer p').css({
+                'color': 'white'
+            })
+            co = true;
+        }
+    });
+
+    // HOVER DARK MODE BUTTONS
+    $('#moon').on('mouseenter', function () {
+        if (co == false) { //bright mode
+            $('#sun').removeClass('haoquang').addClass('sunOff').on('animationend', function () {
+                $('#sun').css({
+                    'color': 'gainsboro',
+                    'border': '0'
+                })
+            })
+            $('#moon').removeClass('moonOff').addClass('moonOn');
+        }
+    })
+    $('#moon').on('mouseleave', function () {
+        if (co == false) //bright mode
+        {
+            $('#sun').removeClass('sunOff').addClass('haoquang');
+            $('#sun').css({
+                'color': 'gold',
+                'border': '3px solid gold',
+                'box-shadow': '0 0 0 0'
+            })
+            $('#moon').removeClass('moonOn').addClass('moonOff');
+        }
+    })
+    $('#sun').on('mouseenter', function () {
+        if (co == true) { //dark mode
+            $('#sun').removeClass('sunOff').addClass('haoquang');
+            $('#sun').css({
+                'color': 'gold',
+                'border': '3px solid gold'
+            })
+            $('#moon').removeClass('moonOn').addClass('moonOff');
+        }
+    })
+    $('#sun').on('mouseleave', function () {
+        if (co == true) //dark mode
+        {
+            $('#sun').removeClass('haoquang').addClass('sunOff');
+            $('#sun').css({
+                'color': 'gainsboro',
+                'border': '0',
+            })
+            $('#moon').removeClass('moonOff').addClass('moonOn');
+        }
+    })
+
+    // javascript cho sự kiện cuộn chuột
+
+    $(window).scroll(function () {
+        let top = $(window).scrollTop();
+        var footer = document.querySelector('.footer');
+        let maxHeight = document.body.offsetHeight;
+
+        let footerCal = maxHeight - footer.offsetHeight - 300;
+        let max = footerCal - 250 + 30;
+
+
+
+        if (top >= 0 && top < max) {
+
+
+            if (top > 0 && top <= footerCal) {
+                if (top > 300) {
+                    let movetoTop = document.querySelector('.icon > div > a');
+                    $(movetoTop).css({
+                        'display': 'block'
+                    });
+                }
+                else {
+                    let movetoTop = document.querySelector('.icon > div > a');
+                    $(movetoTop).css({
+                        'display': 'none'
+                    });
+                }
+
+                let quangCao = document.querySelectorAll('.ads a');
+
+                for (let x of quangCao) {
+                    $(x).css({
+                        'width': '12%',
+                        'height': '50%',
+                        'padding': '1rem',
+                        'margin-top': '1rem',
+                        'border-radius': '1rem',
+                        'position': 'fixed',
+                        'top': '20%'
+                    });
+                }
+            } else if (top <= 400) {
+                if (top > 300) {
+                    let movetoTop = document.querySelector('.icon > div > a');
+                    $(movetoTop).css({
+                        'display': 'none'
+                    });
+                }
+
+                let quangCao = document.querySelectorAll('.ads a');
+
+                for (let x of quangCao) {
+                    $(x).css({
+                        'width': '12%',
+                        'height': '50%',
+
+                        'padding': '1rem',
+                        'margin-top': '1rem',
+                        'border-radius': '1rem',
+                        'position': 'absolute',
+                        'top': '20%'
+                    });
+                }
+            }
+
+        } else {
+            let quangCao = document.querySelectorAll('.ads a');
+
+            for (let x of quangCao) {
+
+                // Cố định vị trí hiện tại của phần tử
+                $(x).css({
+                    'position': 'absolute',
+                    'top': `${footerCal - 88}px` // Giữ nguyên vị trí hiện tại
+                });
+            }
+        }
+    });
+
+    // javascript cho menu Phone 
+    $('.menuPhone').on('click', function () {
+        $('.subMenuP').show();
+        $('.subMenuP>li:first-child>i').on('click', function () {
+            $('.subMenuP').hide();
+        })
+    })
+
+    // Tab effect
+
+    let click = document.querySelectorAll('.tab>li');
+
+    for (let i = 0; i < click.length; i++) {
+        click[i].addEventListener('click', function () {
+
+            for (let j = 0; j < click.length; j++) {
+                $(click[j]).removeClass('changeColorBright changeColorDark');
+                $(click[j]).children('a').css('color', '');
+            }
+
+            if (co == false) // bright mode
+            {
+                $(this).addClass('changeColorBright');
+                $(this).children('a').css('color', 'black');
+            }
+            else // dark mode
+            {
+                $(this).addClass('changeColorDark');
+                $(this).children('a').css('color', 'lightskyblue');
+            }
+
+
+        });
+    }
+
+    // hiện tab content
+    let tabs = document.querySelectorAll('.tab>li');
+
+    for (let x of tabs) {
+        x.addEventListener('click', function (event) {
+            event.preventDefault();
+
+
+            let show = $(x.querySelector('a')).attr('href');
+
+            $('#details').removeClass('active1');
+            $('#lienhe').removeClass('active1');
+
+            $(show).addClass('active1');
+
+
+
+        });
+    }
+}
+
+window.onload = function () {
+
+    if (window.innerWidth >= 1024) {
+        desktop();
+    }
+    else if (window.innerWidth <= 1023) {
+        mobile();
+    }
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth >= 1024) {
+            desktop();
+        }
+        else if (window.innerWidth <= 1023) {
+            mobile();
+        }
+    });
+
 }

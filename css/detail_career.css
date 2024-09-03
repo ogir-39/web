@@ -12,6 +12,17 @@ body {
     margin: 0;
     
 }
+
+/*BLOCK*/
+.main{
+    display: block;
+}
+
+/* HIDDEN */
+.phone, .main_p, .ads_p, .gcareer{
+    display: none;
+}
+
 /* NAV CSS */
 
 .hidden
@@ -537,7 +548,7 @@ header{
 }
 
 .career:hover{
-    background: radial-gradient(lightskyblue,white);
+    background: radial-gradient(lightskyblue,transparent);
     border-radius: 1rem;
 }
 
@@ -546,16 +557,17 @@ header{
     height: 100%;
     align-self: center;
     position: relative;
+    text-align: center;
 }
 
-.career .imgcareer::after{
+/* .career .imgcareer::after{
     content: "";
     width: 0.5px;
     height: 100%;
     right: 10%;
     position: absolute;
     background-color: gainsboro;
-}
+} */
 
 .career .imgcareer>img{
     width: 80%;
@@ -636,7 +648,7 @@ header{
 }
 
 .topcmp:hover{
-    background: radial-gradient(rgba(135, 206, 250, 0.4),whitesmoke);
+    background: radial-gradient(rgba(135, 206, 250, 0.4),transparent);
     border-radius: 1rem;
 }
 
@@ -857,14 +869,16 @@ footer>div:nth-child(2)>img{
 }
 
 .haoquang{
-    animation:  haoquang linear 2s infinite;
+    animation: haoquang linear 2s infinite;
 }
 
 @keyframes sunOff{
     from {
-        box-shadow: 0 0 1rem 0.2rem;
+        color:gold;
+        box-shadow: 0 0 1rem 0.5rem;
     }
     to {
+        color:gainsboro;
         box-shadow: 0 0 0 0;
     }
 }
@@ -931,3 +945,8 @@ footer>div:nth-child(2)>img{
 .moonOff{
     animation: moonOff ease-in-out 1s;
 }
+
+.thongBao{
+    display: none;
+}
+

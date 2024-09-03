@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../images/G_career.png" rel="shortcut icon" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="../css/login.css">
+    <link rel="stylesheet" media="screen and (max-width: 1023px)" href="../css/login_phone.css">
+
     <script src="../javascript/jquery-3.7.1.min.js"></script>
     <script src="../javascript/login.js" defer></script>
     <title>Gcareer - Đăng nhập tài khoản</title>
@@ -15,10 +17,10 @@
 <body>
 
     <header>
-        <a href="../index.html"> <img src="../images/cat.png" width="12%" alt="logo-gcareer"></a>
+        <a href="../index.html"> <img src="../images/cat.png" alt="logo-gcareer"></a>
     </header>
     <div class="form-container">
-        <h2 >Đăng nhập</h2>
+        <h2>Đăng nhập</h2>
 
         <div class="forms flex">
             <div class="benTrai">
@@ -37,7 +39,7 @@
                 <div>Bạn chưa có tài khoản?</div>
                 <a href="./register.html">Đăng ký</a>
             </div>
-            <div class="benPhai right" style="padding-bottom:2.78rem;padding-top: 2.5rem;">
+            <div class="benPhai right">
 
                 <form id="forms">
 
@@ -55,18 +57,18 @@
                     </div>
 
 
+                    <a class="btn1" class="btn" id="dangKy" href="#" ><input type="submit" value="Đăng nhập"/></a>
 
-                    <input type="submit" value="Đăng nhập" class="btn" id="dangKy">
-
+                   
                     <div>Hoặc đăng nhập bằng</div>
 
-                    <a href="#" id="googleIcon" class="flex">
+                    <a href="https://www.google.com/intl/en-US/gmail/about/" target="_blank" id="googleIcon" class="flex">
                         <i class="fa-brands fa-google"></i>
                         <div> Google</div>
 
                     </a>
 
-                    <a href="#" id="facebookIcon" class="flex">
+                    <a href="https://www.facebook.com/" target="_blank" id="facebookIcon" class="flex">
                         <i class="fa-brands fa-facebook"></i>
                         <div> Facebook</div>
 
@@ -74,12 +76,19 @@
 
 
                 </form>
-            </div>
-        </div>
-    </div>
-   
 
-    
+            </div>
+
+
+        </div>
+        <div class="mobileRegister">Bạn chưa có tài khoản?</div>
+        <a href="./register.html">Đăng ký</a>
+    </div>
+    </div>
+    </div>
+
+
+
     <img src="../images/business_man.png" class="img_businessMan" id="boy" alt="business-man">
     <img src="../images/cool_boy.webp" class="img_businessMan" id="coolBoy" alt="business-cool">
 
